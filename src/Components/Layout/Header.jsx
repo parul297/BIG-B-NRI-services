@@ -140,11 +140,12 @@ export default function Header() {
                 <div className="services-grid">
                   {/* Services with appropriate icons */}
                   <ServiceCard name="Property Management" highlight={false} icon="building" onClick={() => { navigate('/property-management'); setServicesOpen(false); }} />
-                  <ServiceCard name="Civil Renovators" highlight={true} icon="construction" onClick={() => {}} />
-                  <ServiceCard name="Birth Certificate" highlight={false} icon="certificate" onClick={() => {}} />
+                  <ServiceCard name="Civil Works & Construction Services" highlight={true} icon="construction" onClick={() => {}} />
+                  <ServiceCard name="Vital Records Procurement " highlight={false} icon="certificate" onClick={() => {}} />
                   <ServiceCard name="Online Services" highlight={false} icon="online" onClick={() => {navigate('/online-services'); setServicesOpen(false);}} />
-                  <ServiceCard name="Financial and Legal" highlight={false} icon="finance" onClick={() => {navigate('/financial-legal'); setServicesOpen(false);}} />
-                  <ServiceCard name="Business Consulting" highlight={false} icon="consulting" onClick={() => {}} />
+                  <ServiceCard name="Complete Document Attestation" highlight={false} icon="online" onClick={() => {navigate('/online-services'); setServicesOpen(false);}} />
+                  <ServiceCard name="Taxes and Legal" highlight={false} icon="finance" onClick={() => {navigate('/financial-legal'); setServicesOpen(false);}} />
+                  <ServiceCard name="Business Consulting/ Registrations" highlight={false} icon="consulting" onClick={() => {}} />
                   <ServiceCard name="Banking Assistance" highlight={false} icon="banking" onClick={() => {}} />
                   <ServiceCard name="Health/Medical" highlight={false} icon="medical" onClick={() => {}} />
                 </div>
