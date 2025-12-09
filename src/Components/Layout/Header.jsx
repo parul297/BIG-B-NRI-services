@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import bigBlOGO from "../../assets/BigB logo.jpg"
-import newLogo from "../../assets/NewLogo.png"
+// import newLogo from "../../assets/NewLogo.png"
 
 import React from 'react'
 
