@@ -3,48 +3,49 @@ import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
 
-export default function OnlineServices() {
+export default function CivilWorks() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
   const services = [
     {
-      title: 'Aadhaar Card Services',
-      description: 'Complete assistance for Aadhaar card applications, corrections, and updates including changes in Name, Date of Birth, Address, Mobile Number and other demographic details. We guide you through the required documents and handle the submission process to relevant authorities.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New Aadhaar Application', 'Name/DOB Corrections', 'Address Updates', 'Mobile Number Updates', 'Document Guidance', 'Application Submission Support']
+      title: 'Construction',
+      description: 'Professional construction services for residential and commercial projects. From ground-up construction to complete project management, our expert team at AM Renovators ensures quality workmanship, timely delivery, and adherence to all safety standards.',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&h=300&q=80',
+      features: ['New Construction Projects', 'Project Planning & Design', 'Quality Material Selection', 'Expert Team Management', 'Timeline Adherence', 'Safety Compliance'],
+      link: 'AM Renovators'
     },
     {
-      title: 'PAN Card Services',
-      description: 'Professional assistance for PAN card applications, corrections, and updates. We handle changes to Name, Date of Birth, Address, Mobile Number and track your application until the PAN card is issued. Scanned copies provided via email with physical delivery assistance available.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New PAN Application', 'Corrections & Updates', 'NSDL/UTIITSL Processing', 'Application Tracking', 'Email Scanned Copies', 'Physical Delivery Support']
+      title: 'Renovation',
+      description: 'Transform your existing spaces with our comprehensive renovation services. Whether it\'s a complete home makeover or specific room renovations, AM Renovators brings your vision to life with attention to detail, modern designs, and superior craftsmanship.',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&h=300&q=80',
+      features: ['Complete Home Renovation', 'Kitchen & Bathroom Remodeling', 'Interior Design Updates', 'Structural Modifications', 'Modern Upgrades', 'Cost-Effective Solutions'],
+      link: 'AM Renovators'
     },
     {
-      title: 'Passport Services',
-      description: 'End-to-end support for passport applications and renewals through Passport Seva Kendra (PSK) or Indian Mission/Consulate. We provide guidance on documents, coordinate appointments, handle follow-ups, and keep you updated on application status and delivery.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New Passport Application', 'Passport Renewal', 'Document Preparation', 'PSK Appointment Coordination', 'Status Updates', 'Delivery Tracking']
+      title: 'Maintenance',
+      description: 'Keep your property in pristine condition with our ongoing maintenance services. AM Renovators provides preventive maintenance, repairs, and regular upkeep to ensure your property remains safe, functional, and valuable for years to come.',
+      image: 'https://images.unsplash.com/photo-1534237710431-e2fc698436d0?auto=format&fit=crop&w=400&h=300&q=80',
+      features: ['Preventive Maintenance', 'Repair Services', 'Regular Inspections', 'Painting & Waterproofing', 'Electrical & Plumbing', 'Emergency Response'],
+      link: 'AM Renovators'
     },
     {
-      title: 'GHMC Property Tax Management',
-      description: 'Stay worry-free while abroad as we handle all your statutory payments including municipal taxes, property taxes, and other government dues. We track deadlines, coordinate with government offices, and remind you of upcoming payment due dates.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['Property Tax Payment', 'Municipal Tax Handling', 'Deadline Tracking', 'Government Office Coordination', 'Payment Reminders', 'Statutory Compliance']
-    },
-    {
-      title: 'Utility Bill Payment Management',
-      description: 'Comprehensive management of all your recurring utility bills from abroad. We handle electricity, water, TV/cable, internet, society maintenance charges and coordinate with service providers to ensure timely payments with regular reminders.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['Electricity Bill Payment', 'Water Bill Management', 'TV/Cable/Internet Bills', 'Society Maintenance', 'Due Date Tracking', 'Service Provider Coordination']
+      title: 'Farmhouses',
+      description: 'Specialized construction and development services for farmhouses and rural properties. AM Renovators creates beautiful, functional farmhouse spaces that blend modern amenities with natural surroundings, perfect for weekend getaways or permanent residence.',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&h=300&q=80',
+      features: ['Farmhouse Construction', 'Landscape Development', 'Rural Property Planning', 'Sustainable Building Practices', 'Custom Designs', 'Infrastructure Setup'],
+      link: 'AM Renovators'
     }
   ]
 
   const stats = [
-    { value: '2000+', label: 'Applications Processed' },
-    { value: '99%', label: 'Success Rate' },
-    { value: '48h', label: 'Average Response' },
-    { value: 'Global', label: 'NRI Coverage' }
+    { value: '200+', label: 'Projects Completed' },
+    { value: '100%', label: 'Client Satisfaction' },
+    { value: '15+', label: 'Years Experience' },
+    { value: 'Premium', label: 'Quality Standards' }
   ]
+
+
+
 
   return (
     <main className="min-h-screen" style={{background: 'linear-gradient(135deg, rgba(247, 230, 181, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%)'}}>
@@ -55,13 +56,12 @@ export default function OnlineServices() {
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
       />
-  
 
       {/* Hero Section */}
       <div className="relative overflow-hidden text-white" style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'grayscale(100%)'
@@ -71,12 +71,12 @@ export default function OnlineServices() {
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Online Services
+              Civil Works & Construction Services
               <div className="w-24 h-1 mt-4 rounded-full" style={{background: 'linear-gradient(90deg, #d4af37 0%, #ffd86b 100%)'}}></div>
             </h1>
             <p className="text-xl leading-relaxed" style={{color: '#bfa46f'}}>
-              Digital solutions for all your document processing needs. From Aadhaar and PAN cards to passport services and utility bill management, 
-              we provide comprehensive online services for NRIs worldwide.
+              Premium construction, renovation, and maintenance services through AM Renovators, a subsidiary of BIG B NRI Services. 
+              We bring your vision to life with expert craftsmanship and attention to detail.
             </p>
           </div>
         </div>
@@ -109,10 +109,14 @@ export default function OnlineServices() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#071020'}}>
-            Our Online Services
+            Our Construction Services
           </h2>
-          <p className="max-w-2xl mx-auto text-lg mb-8" style={{color: '#5a4a1a'}}>
-            Comprehensive digital solutions designed for NRIs to handle documentation and administrative processes remotely.
+          <p className="max-w-2xl mx-auto text-lg mb-4" style={{color: '#5a4a1a'}}>
+            Comprehensive civil works and construction solutions delivered by AM Renovators, 
+            ensuring quality craftsmanship and timely project completion.
+          </p>
+          <p className="text-base mb-8" style={{color: '#b08a2f', fontWeight: '600'}}>
+            A Subsidiary of BIG B NRI Services
           </p>
           
           {/* CTA Button at Top */}
@@ -151,27 +155,31 @@ export default function OnlineServices() {
                       <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
                            style={{background: 'rgba(255, 255, 255, 0.1)'}}>
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                          <polyline points="14 2 14 8 20 8"/>
+                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                          <polyline points="9 22 9 12 15 12 15 22"/>
                         </svg>
                       </div>
-                      <p className="text-white font-semibold text-lg">Online Service</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Document Processing</p>
+                      <p className="text-white font-semibold text-lg">Construction Service</p>
+                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Professional Excellence</p>
                     </div>
                   </div>
                   <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
                        style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
                     Service {index + 1}
                   </div>
+                  <div className="absolute bottom-4 right-4 px-4 py-2 rounded-full text-xs font-bold"
+                       style={{background: 'rgba(212, 175, 55, 0.9)', color: 'white'}}>
+                    {service.link}
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
                          style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
                       {index + 1}
-                    </div> */}
+                    </div>
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
@@ -192,6 +200,16 @@ export default function OnlineServices() {
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg" 
+                       style={{background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)'}}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b08a2f" strokeWidth="2">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                    <span className="text-sm font-semibold" style={{color: '#b08a2f'}}>
+                      Powered by {service.link}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -215,10 +233,11 @@ export default function OnlineServices() {
           
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Simplify Your Document Processing?
+              Ready to Start Your Construction Project?
             </h2>
             <p className="text-lg mb-8" style={{color: '#fff7e6'}}>
-              Get expert online services tailored for NRIs. Schedule a virtual consultation with our specialists or reach out via WhatsApp for quick support.
+              Get expert construction and renovation services through AM Renovators. 
+              Schedule a consultation with our specialists or reach out via WhatsApp for quick support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
@@ -229,10 +248,10 @@ export default function OnlineServices() {
                   color: '#b08a2f',
                   boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)'
                 }}>
-                Book Virtual Consultation
+                Book Consultation
               </button>
               <a 
-                href="https://wa.me/919989103388" 
+                href="https://wa.me/1234567890" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center gap-2"
@@ -272,7 +291,8 @@ export default function OnlineServices() {
           }
         }
       `}</style>
-      <Footer/>
+        <Footer/>
     </main>
+
   )
 }

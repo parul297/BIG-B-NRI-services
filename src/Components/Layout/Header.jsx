@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import bigBlOGO from "../../assets/BigB logo.jpg"
-// import newLogo from "../../assets/NewLogo.png"
-
 import React from 'react'
 
 export default function Header() {
@@ -14,82 +12,29 @@ export default function Header() {
     <header style={{ background: 'linear-gradient(90deg,#071020 0%,#0b2740 100%)', color: '#d4af37', borderBottom: '3px solid #d4af37' }} className="shadow">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-4">
-          {/* <div className="flex items-center gap-3">
-            <div className="w-12 h-12 flex-shrink-0">
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor:'#DAA520', stopOpacity:1}} />
-                    <stop offset="50%" style={{stopColor:'#FFD700', stopOpacity:1}} />
-                    <stop offset="100%" style={{stopColor:'#B8860B', stopOpacity:1}} />
-                  </linearGradient>
-                </defs>
-                
-                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#goldGradient)" strokeWidth="3"/>
-                <ellipse cx="50" cy="50" rx="15" ry="45" fill="none" stroke="url(#goldGradient)" strokeWidth="2"/>
-                <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="url(#goldGradient)" strokeWidth="2"/>
-                <ellipse cx="50" cy="50" rx="30" ry="45" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" opacity="0.7"/>
-                <ellipse cx="50" cy="50" rx="45" ry="30" fill="none" stroke="url(#goldGradient)" strokeWidth="1.5" opacity="0.7"/>
-              </svg>
-            </div>
-            
-            <div className="flex flex-col leading-tight">
-              <div style={{
-                fontSize: '28px',
-                fontWeight: 'bold',
-                letterSpacing: '-2px',
-                background: 'linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                position: 'relative',
-                lineHeight: '1'
-              }}>
-                BIGB
-                <span style={{
-                  position: 'absolute',
-                  bottom: '10px',
-                  left: '17px',
-                  width: '14px',
-                  height: '3px',
-                  background: 'linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%)',
-                  display: 'block'
-                }}></span>
-              </div>
-              <div style={{
-                fontSize: '9px',
-                color: '#B8860B',
-                letterSpacing: '0.5px',
-                marginTop: '4px',
-                fontWeight: '500'
-              }}>
-               NRI Services
-              </div>
-            </div>
-          </div> */}
-           <div style={{
-    background: 'white',
-    padding: '8px 20px',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 2px 8px rgba(212, 175, 55, 0.2)',
-    transition: 'transform 0.2s'
-  }}
-  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-  >
-    <img 
-      src={bigBlOGO} 
-      className="h-12 w-auto" 
-      alt="BigB Logo"
-      style={{ 
-        objectFit: 'contain',
-        maxWidth: '160px'
-      }}
-    />
-  </div>
+          <div style={{
+            background: 'white',
+            padding: '8px 20px',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 2px 8px rgba(212, 175, 55, 0.2)',
+            transition: 'transform 0.2s'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            <img 
+              src={bigBlOGO} 
+              className="h-12 w-auto" 
+              alt="BigB Logo"
+              style={{ 
+                objectFit: 'contain',
+                maxWidth: '160px'
+              }}
+            />
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
@@ -125,29 +70,80 @@ export default function Header() {
       )}
 
       {servicesOpen && (
-        <div className="services-modal fixed inset-0 z-50 flex items-center justify-center">
+        <div className="services-modal fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="modal-backdrop absolute inset-0" onClick={() => setServicesOpen(false)}></div>
 
-          <div role="dialog" aria-modal="true" className="modal-content relative w-11/12 max-w-6xl rounded-lg shadow-lg">
-            <button aria-label="Close services" className="absolute top-3 right-3 p-2 rounded-md text-2xl text-[#071020] hover:bg-amber-200 transition-colors z-10" onClick={() => setServicesOpen(false)}>×</button>
-            <div className="flex flex-col md:flex-row">
-              <div className="p-8 flex-shrink-0" style={{ width: '34%' }}>
-                <h3 className="text-3xl font-bold gold-shine">Our Services</h3>
-                <p className="modal-subtext">Choose a service to learn more or book a consultation.</p>
+          <div role="dialog" aria-modal="true" className="modal-content relative w-full max-w-6xl rounded-lg shadow-lg overflow-hidden" style={{ maxHeight: '90vh' }}>
+            <button 
+              aria-label="Close services" 
+              className="absolute top-3 right-3 p-2 rounded-md text-2xl text-[#071020] hover:bg-amber-200 transition-colors z-10" 
+              onClick={() => setServicesOpen(false)}
+            >
+              ×
+            </button>
+            
+            <div className="flex flex-col lg:flex-row overflow-y-auto" style={{ maxHeight: '90vh' }}>
+              <div className="p-6 lg:p-8 flex-shrink-0 lg:w-72">
+                <h3 className="text-2xl lg:text-3xl font-bold gold-shine">Our Services</h3>
+                <p className="modal-subtext mt-2">Choose a service to learn more or book a consultation.</p>
               </div>
 
-              <div className="p-8 flex-1">
-                <div className="services-grid">
-                  {/* Services with appropriate icons */}
-                  <ServiceCard name="Property Management" highlight={false} icon="building" onClick={() => { navigate('/property-management'); setServicesOpen(false); }} />
-                  <ServiceCard name="Civil Works & Construction Services" highlight={true} icon="construction" onClick={() => {}} />
-                  <ServiceCard name="Vital Records Procurement " highlight={false} icon="certificate" onClick={() => {}} />
-                  <ServiceCard name="Online Services" highlight={false} icon="online" onClick={() => {navigate('/online-services'); setServicesOpen(false);}} />
-                  <ServiceCard name="Complete Document Attestation" highlight={false} icon="online" onClick={() => {navigate('/online-services'); setServicesOpen(false);}} />
-                  <ServiceCard name="Taxes and Legal" highlight={false} icon="finance" onClick={() => {navigate('/financial-legal'); setServicesOpen(false);}} />
-                  <ServiceCard name="Business Consulting/ Registrations" highlight={false} icon="consulting" onClick={() => {}} />
-                  <ServiceCard name="Banking Assistance" highlight={false} icon="banking" onClick={() => {}} />
-                  <ServiceCard name="Health/Medical" highlight={false} icon="medical" onClick={() => {}} />
+              <div className="p-6 lg:p-8 flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <ServiceCard 
+                    name="Property Management" 
+                    highlight={false} 
+                    icon="building" 
+                    onClick={() => { navigate('/property-management'); setServicesOpen(false); }} 
+                  />
+                  <ServiceCard 
+                    name="Civil Works & Construction" 
+                    highlight={true} 
+                    icon="construction" 
+                    onClick={() => {navigate('/civil-works'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Vital Records Procurement" 
+                    highlight={false} 
+                    icon="certificate" 
+                    onClick={() => {navigate('/vital-records'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Online Services" 
+                    highlight={false} 
+                    icon="online" 
+                    onClick={() => {navigate('/online-services'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Document Attestation" 
+                    highlight={false} 
+                    icon="online" 
+                    onClick={() => {navigate('/complete-document'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Taxes and Legal" 
+                    highlight={false} 
+                    icon="finance" 
+                    onClick={() => {navigate('/taxes-legal'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Business Consulting" 
+                    highlight={false} 
+                    icon="consulting" 
+                    onClick={() => {navigate('/business-consulting'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Banking Assistance" 
+                    highlight={false} 
+                    icon="banking" 
+                    onClick={() => {navigate('/banking'); setServicesOpen(false);}} 
+                  />
+                  <ServiceCard 
+                    name="Health/Medical" 
+                    highlight={false} 
+                    icon="medical" 
+                    onClick={() => {navigate('/health'); setServicesOpen(false);}} 
+                  />
                 </div>
               </div>
             </div>
@@ -220,11 +216,14 @@ function ServiceCard({ name, highlight, icon, onClick }) {
   }
 
   return (
-    <button onClick={onClick} className={`service-card p-6 rounded-md flex items-center gap-4 text-left ${highlight ? 'service-highlight' : ''}`}>
+    <button 
+      onClick={onClick} 
+      className={`service-card p-4 rounded-md flex flex-col items-center gap-3 text-center transition-all hover:scale-105 ${highlight ? 'service-highlight' : ''}`}
+    >
       <div className="service-icon flex items-center justify-center w-12 h-12 rounded-full" aria-hidden>
         {getIcon(icon)}
       </div>
-      <div className="service-label">{name}</div>
+      <div className="service-label text-sm font-medium">{name}</div>
     </button>
   )
 }

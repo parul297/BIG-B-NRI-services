@@ -3,59 +3,71 @@ import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
 
-export default function OnlineServices() {
+export default function TaxesLegal() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
   const services = [
     {
-      title: 'Aadhaar Card Services',
-      description: 'Complete assistance for Aadhaar card applications, corrections, and updates including changes in Name, Date of Birth, Address, Mobile Number and other demographic details. We guide you through the required documents and handle the submission process to relevant authorities.',
+      title: 'IT Notices & Tax Authority Assistance',
+      description: 'NRIs carrying out financial transactions in India may receive queries or notices from the Income Tax Department. We provide assistance in handling these matters on your behalf, ensuring proper representation and support during the process. This includes submitting detailed explanations, providing supporting documentation, and coordinating with relevant government officials to resolve the matter.',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New Aadhaar Application', 'Name/DOB Corrections', 'Address Updates', 'Mobile Number Updates', 'Document Guidance', 'Application Submission Support']
+      features: ['Notice Review & Analysis',
+'Documentation Support',
+'Tax Office Coordination',
+'Government Liaison',
+'Representation Services',
+'Matter Resolution Support',]
     },
     {
-      title: 'PAN Card Services',
-      description: 'Professional assistance for PAN card applications, corrections, and updates. We handle changes to Name, Date of Birth, Address, Mobile Number and track your application until the PAN card is issued. Scanned copies provided via email with physical delivery assistance available.',
+      title: 'Legal Consultation & Lawyer Arrangement',
+      description: ' NRIs dealing with legal challenges in India can count on us for comprehensive support. We connect you with reputable and highly competent legal professionals best suited to handle your case effectively. Our services include arranging experienced lawyers, facilitating legal opinions, and coordinating with legal firms experienced in cases similar to yours.',
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New PAN Application', 'Corrections & Updates', 'NSDL/UTIITSL Processing', 'Application Tracking', 'Email Scanned Copies', 'Physical Delivery Support']
+      features: [ 'Experienced Lawyer Connections',
+'Legal Opinion Facilitation',
+'Case-Specific Expertise',
+'Family Legal Support',
+'Legal Firm Coordination',
+'Ongoing Case Support',]
     },
     {
-      title: 'Passport Services',
-      description: 'End-to-end support for passport applications and renewals through Passport Seva Kendra (PSK) or Indian Mission/Consulate. We provide guidance on documents, coordinate appointments, handle follow-ups, and keep you updated on application status and delivery.',
+      title: 'Income Tax Return (ITR) Filing',
+      description: 'Filing an Income Tax Return is mandatory for NRIs whose income in India exceeds prescribed exemption limits. We assist by connecting you with qualified Chartered Accountants, preparing and filing returns accurately, and providing guidance on documents, exemptions, and deductions applicable to NRIs. Our experts ensure efficient filing in full compliance with Indian regulations.',
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New Passport Application', 'Passport Renewal', 'Document Preparation', 'PSK Appointment Coordination', 'Status Updates', 'Delivery Tracking']
+      features: ['CA Connection Services',
+'Accurate ITR Preparation',
+'NRI-Specific Guidance',
+'Tax Authority Coordination',
+'Tax Planning Advice',
+'Compliance Assurance']
     },
     {
-      title: 'GHMC Property Tax Management',
-      description: 'Stay worry-free while abroad as we handle all your statutory payments including municipal taxes, property taxes, and other government dues. We track deadlines, coordinate with government offices, and remind you of upcoming payment due dates.',
+      title: 'Document Legalization & Attestation',
+      description: 'Many documents require proper legalization, notarization, or attestation for legal acceptance. We handle every step with precision and professionalism, providing seamless end-to-end documentation support exclusively for NRIs. From guidance to final delivery, we ensure your documents are processed quickly, correctly, and without hassle.',
       image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['Property Tax Payment', 'Municipal Tax Handling', 'Deadline Tracking', 'Government Office Coordination', 'Payment Reminders', 'Statutory Compliance']
+      features: ['Document Legalization',
+'Notarization Services',
+'Attestation Support',
+'Procedure Guidance',
+'Authority Coordination',
+'Timely Processing']
     },
-    {
-      title: 'Utility Bill Payment Management',
-      description: 'Comprehensive management of all your recurring utility bills from abroad. We handle electricity, water, TV/cable, internet, society maintenance charges and coordinate with service providers to ensure timely payments with regular reminders.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['Electricity Bill Payment', 'Water Bill Management', 'TV/Cable/Internet Bills', 'Society Maintenance', 'Due Date Tracking', 'Service Provider Coordination']
-    }
   ]
 
   const stats = [
-    { value: '2000+', label: 'Applications Processed' },
-    { value: '99%', label: 'Success Rate' },
-    { value: '48h', label: 'Average Response' },
-    { value: 'Global', label: 'NRI Coverage' }
+  { value: '1000+', label: 'Cases Handled' },
+{ value: '95%', label: 'Resolution Rate' },
+{ value: '24-48h', label: 'Response Time' },
+{ value: 'Expert', label: 'Legal Network' },
   ]
 
   return (
     <main className="min-h-screen" style={{background: 'linear-gradient(135deg, rgba(247, 230, 181, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%)'}}>
       <Header/>
-
-         <ContactForm 
+        <ContactForm 
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
       />
-  
 
       {/* Hero Section */}
       <div className="relative overflow-hidden text-white" style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
@@ -71,12 +83,11 @@ export default function OnlineServices() {
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Online Services
+        Taxes and Legal Services for NRIs
               <div className="w-24 h-1 mt-4 rounded-full" style={{background: 'linear-gradient(90deg, #d4af37 0%, #ffd86b 100%)'}}></div>
             </h1>
             <p className="text-xl leading-relaxed" style={{color: '#bfa46f'}}>
-              Digital solutions for all your document processing needs. From Aadhaar and PAN cards to passport services and utility bill management, 
-              we provide comprehensive online services for NRIs worldwide.
+             "Professional tax and legal assistance for NRIs in India. From IT notices and tax return filing to legal consultations and document attestation, we provide comprehensive support for all your tax and legal requirements."
             </p>
           </div>
         </div>
@@ -109,10 +120,10 @@ export default function OnlineServices() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#071020'}}>
-            Our Online Services
+            Our Taxes and Legal Services
           </h2>
           <p className="max-w-2xl mx-auto text-lg mb-8" style={{color: '#5a4a1a'}}>
-            Comprehensive digital solutions designed for NRIs to handle documentation and administrative processes remotely.
+            Expert guidance for tax compliance, legal matters, and professional consultations tailored specifically for NRIs.
           </p>
           
           {/* CTA Button at Top */}
@@ -215,10 +226,10 @@ export default function OnlineServices() {
           
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Simplify Your Document Processing?
+             Need Tax or Legal Assistance?
             </h2>
             <p className="text-lg mb-8" style={{color: '#fff7e6'}}>
-              Get expert online services tailored for NRIs. Schedule a virtual consultation with our specialists or reach out via WhatsApp for quick support.
+               Get expert support for IT notices, tax filing, legal matters, and document attestation. Schedule a consultation with our specialists or reach out via WhatsApp for immediate assistance
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 

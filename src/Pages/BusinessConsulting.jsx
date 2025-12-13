@@ -3,59 +3,59 @@ import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
 
-export default function OnlineServices() {
+export default function BusinessConsulting() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
-  const services = [
-    {
-      title: 'Aadhaar Card Services',
-      description: 'Complete assistance for Aadhaar card applications, corrections, and updates including changes in Name, Date of Birth, Address, Mobile Number and other demographic details. We guide you through the required documents and handle the submission process to relevant authorities.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New Aadhaar Application', 'Name/DOB Corrections', 'Address Updates', 'Mobile Number Updates', 'Document Guidance', 'Application Submission Support']
-    },
-    {
-      title: 'PAN Card Services',
-      description: 'Professional assistance for PAN card applications, corrections, and updates. We handle changes to Name, Date of Birth, Address, Mobile Number and track your application until the PAN card is issued. Scanned copies provided via email with physical delivery assistance available.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New PAN Application', 'Corrections & Updates', 'NSDL/UTIITSL Processing', 'Application Tracking', 'Email Scanned Copies', 'Physical Delivery Support']
-    },
-    {
-      title: 'Passport Services',
-      description: 'End-to-end support for passport applications and renewals through Passport Seva Kendra (PSK) or Indian Mission/Consulate. We provide guidance on documents, coordinate appointments, handle follow-ups, and keep you updated on application status and delivery.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['New Passport Application', 'Passport Renewal', 'Document Preparation', 'PSK Appointment Coordination', 'Status Updates', 'Delivery Tracking']
-    },
-    {
-      title: 'GHMC Property Tax Management',
-      description: 'Stay worry-free while abroad as we handle all your statutory payments including municipal taxes, property taxes, and other government dues. We track deadlines, coordinate with government offices, and remind you of upcoming payment due dates.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['Property Tax Payment', 'Municipal Tax Handling', 'Deadline Tracking', 'Government Office Coordination', 'Payment Reminders', 'Statutory Compliance']
-    },
-    {
-      title: 'Utility Bill Payment Management',
-      description: 'Comprehensive management of all your recurring utility bills from abroad. We handle electricity, water, TV/cable, internet, society maintenance charges and coordinate with service providers to ensure timely payments with regular reminders.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&h=300&q=80',
-      features: ['Electricity Bill Payment', 'Water Bill Management', 'TV/Cable/Internet Bills', 'Society Maintenance', 'Due Date Tracking', 'Service Provider Coordination']
-    }
-  ]
+const services = [
+  {
+    title: 'Company & Firm Registrations',
+    description: 'We provide complete assistance for registering your business in India. Whether you want to set up a Proprietorship, Partnership, Private Limited Company, LLP, or any other business structure, we guide you through the entire process ensuring smooth, legal, and hassle-free registration with complete compliance.',
+    features: ['Company Incorporation', 'Name Approval (MCA)', 'MoA & AoA Drafting', 'PAN & TAN Registration', 'GST Registration', 'Partnership Deed Drafting']
+  },
+  {
+    title: 'Society & Trust Registrations',
+    description: 'Complete assistance for registering societies and trusts in India. We help individuals, NRIs, and groups establish non-profit organizations, charitable trusts, educational institutions, or social service organizations under the Societies Registration Act, 1860 or Indian Trusts Act, 1882 in a legally compliant manner.',
+    features: ['Society Registration', 'Trust Registration', 'MoA & Rules Drafting', 'Certificate Procurement', 'Annual Compliance Support', 'Amendment Assistance']
+  },
+  {
+    title: 'Import/Export Code & Trade License',
+    description: 'We provide complete assistance for obtaining Import/Export Code (IEC), a mandatory requirement for businesses involved in international trade. Our services help entrepreneurs, NRIs, and companies start their import/export operations smoothly and compliantly, including liaison with DGFT and related authorities.',
+    features: ['IEC Registration', 'DGFT Coordination', 'Eligibility Guidance', 'Application Processing', 'NRI Support', 'Trade License Facilitation']
+  },
+  {
+    title: 'Trademark & Labour License',
+    description: 'Professional assistance for securing Trademark Registration to protect your brand identity and obtaining Labour Licenses under the Contract Labour Act, 1970. We ensure your operations remain fully compliant, legally protected, and ready to engage contract labour without any regulatory challenges.',
+    features: ['Trademark Registration', 'Brand Protection', 'Labour License Procurement', 'Statutory Compliance', 'State Rules Adherence', 'Regulatory Support']
+  },
+  {
+    title: 'EPF & ESIC Registrations',
+    description: 'Comprehensive assistance for Employee Provident Fund (EPF) and Employee State Insurance Corporation (ESIC) registration and filings. We help businesses comply with statutory requirements, ensuring timely contributions, accurate filings, and smooth compliance with EPFO and ESIC authorities.',
+    features: ['EPF Registration & Filing', 'ESIC Registration & Filing', 'Monthly Contributions', 'Accurate Calculations', 'NRI Employee Support', 'Penalty Avoidance']
+  },
+  {
+    title: 'Business Agreements & Legal Documents',
+    description: 'We offer comprehensive assistance in drafting, reviewing, and managing all kinds of agreements for individuals, businesses, and NRIs. Our services ensure that your agreements are legally sound, enforceable, and tailored to your specific needs, providing clarity and protection in all business and personal transactions.',
+    features: ['Partnership Agreements', 'MoU Drafting', 'Rental/Lease Agreements', 'Employment Contracts', 'Sale/Purchase Agreements', 'Franchise Agreements']
+  }
+]
 
-  const stats = [
-    { value: '2000+', label: 'Applications Processed' },
-    { value: '99%', label: 'Success Rate' },
-    { value: '48h', label: 'Average Response' },
-    { value: 'Global', label: 'NRI Coverage' }
-  ]
+ const stats = [
+  { value: '500+', label: 'Businesses Registered' },
+  { value: '100%', label: 'Compliance Rate' },
+  { value: '15-30', label: 'Days Average Setup' },
+  { value: 'All India', label: 'Coverage' }
+]
+
+
 
   return (
     <main className="min-h-screen" style={{background: 'linear-gradient(135deg, rgba(247, 230, 181, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%)'}}>
       <Header/>
-
-         <ContactForm 
+      <ContactForm 
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
       />
-  
 
       {/* Hero Section */}
       <div className="relative overflow-hidden text-white" style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
@@ -71,12 +71,11 @@ export default function OnlineServices() {
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Online Services
+          Business Consulting & Registrations
               <div className="w-24 h-1 mt-4 rounded-full" style={{background: 'linear-gradient(90deg, #d4af37 0%, #ffd86b 100%)'}}></div>
             </h1>
             <p className="text-xl leading-relaxed" style={{color: '#bfa46f'}}>
-              Digital solutions for all your document processing needs. From Aadhaar and PAN cards to passport services and utility bill management, 
-              we provide comprehensive online services for NRIs worldwide.
+              End-to-end business setup and compliance support for NRIs and entrepreneurs. From company registrations and GST compliance to trademark protection and labor licenses, we help you start, manage, and grow your business in India with confidence.
             </p>
           </div>
         </div>
@@ -109,10 +108,10 @@ export default function OnlineServices() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{color: '#071020'}}>
-            Our Online Services
+         Our Business Services
           </h2>
           <p className="max-w-2xl mx-auto text-lg mb-8" style={{color: '#5a4a1a'}}>
-            Comprehensive digital solutions designed for NRIs to handle documentation and administrative processes remotely.
+           Professional business setup and compliance solutions helping NRIs and entrepreneurs establish and manage businesses in India with complete legal compliance.
           </p>
           
           {/* CTA Button at Top */}
@@ -215,10 +214,10 @@ export default function OnlineServices() {
           
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Simplify Your Document Processing?
+            Ready to Start Your Business in India?
             </h2>
             <p className="text-lg mb-8" style={{color: '#fff7e6'}}>
-              Get expert online services tailored for NRIs. Schedule a virtual consultation with our specialists or reach out via WhatsApp for quick support.
+            Get expert guidance for company registration, compliance, and business setup. Our specialists help NRIs and entrepreneurs navigate Indian business laws seamlessly. Schedule a consultation or reach out via WhatsApp today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 

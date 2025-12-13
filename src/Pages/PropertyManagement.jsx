@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import Footer from '../Components/Layout/Footer.jsx';
 import Header from '../Components/Layout/Header.jsx';
+import ContactForm from '../Components/Home/EmailForm.jsx';
 
 export default function PropertyManagement() {
   const [showEmailForm, setShowEmailForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
+
 
   const services = [
     {
@@ -58,134 +53,18 @@ export default function PropertyManagement() {
     { value: 'Global', label: 'NRI Coverage' }
   ]
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you within 24 hours.');
-    setShowEmailForm(false);
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-  };
 
-  const handleChange = (field, value) => {
-    setFormData({ ...formData, [field]: value });
-  };
 
   return (
     <main className="min-h-screen" style={{background: 'linear-gradient(135deg, rgba(247, 230, 181, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%)'}}>
       <Header />
-      {/* Popup Modal */}
-      {showEmailForm && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{background: 'rgba(7, 16, 32, 0.85)', backdropFilter: 'blur(4px)'}}
-          onClick={() => setShowEmailForm(false)}
-        >
-          <div 
-            className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-            style={{border: '2px solid rgba(212, 175, 55, 0.3)'}}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setShowEmailForm(false)}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-10"
-              style={{background: 'rgba(212, 175, 55, 0.1)'}}
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b08a2f" strokeWidth="2">
-                <path d="M18 6L6 18M6 6l12 12"/>
-              </svg>
-            </button>
 
-            {/* Modal Content */}
-            <div className="p-8">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                     style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-2" style={{color: '#071020'}}>
-                  Get Started with Our Services
-                </h3>
-                <p style={{color: '#5a4a1a'}}>
-                  Fill out the form below and our team will contact you shortly
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <div>
-                  <label className="block mb-2 font-semibold" style={{color: '#071020'}}>Name *</label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none"
-                    style={{borderColor: 'rgba(212, 175, 55, 0.3)'}}
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold" style={{color: '#071020'}}>Email *</label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none"
-                    style={{borderColor: 'rgba(212, 175, 55, 0.3)'}}
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold" style={{color: '#071020'}}>Phone *</label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none"
-                    style={{borderColor: 'rgba(212, 175, 55, 0.3)'}}
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold" style={{color: '#071020'}}>Service Interested In *</label>
-                  <select
-                    value={formData.service}
-                    onChange={(e) => handleChange('service', e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none"
-                    style={{borderColor: 'rgba(212, 175, 55, 0.3)'}}
-                  >
-                    <option value="">Select a service</option>
-                    {services.map((service, idx) => (
-                      <option key={idx} value={service.title}>{service.title}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="block mb-2 font-semibold" style={{color: '#071020'}}>Message</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => handleChange('message', e.target.value)}
-                    rows="4"
-                    className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none"
-                    style={{borderColor: 'rgba(212, 175, 55, 0.3)'}}
-                    placeholder="Tell us about your requirements"
-                  ></textarea>
-                </div>
-                <button
-                  onClick={handleSubmit}
-                  className="w-full px-8 py-4 text-white text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)',
-                    boxShadow: '0 15px 35px rgba(212, 175, 55, 0.4)'
-                  }}
-                >
-                  Submit Request
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+         <ContactForm 
+        isOpen={showEmailForm}
+        onClose={() => setShowEmailForm(false)}
+        showAsModal={true}
+      />
+  
 
       {/* Hero Section */}
       <div className="relative overflow-hidden text-white" style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
@@ -298,10 +177,10 @@ export default function PropertyManagement() {
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
+                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
                          style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
                       {index + 1}
-                    </div>
+                    </div> */}
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
