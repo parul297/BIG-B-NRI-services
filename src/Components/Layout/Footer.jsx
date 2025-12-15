@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="relative overflow-hidden">
       {/* Main Footer Content */}
       <div style={{ background: 'linear-gradient(180deg, #f5f1e8 0%, #e8dfc8 100%)' }}>
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 items-start">
             {/* Company Info */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 {/* Golden BIGB Logo */}
                 <div className="w-12 h-12 flex-shrink-0">
@@ -64,7 +64,7 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <p className="mb-6 leading-relaxed max-w-md" style={{ color: '#5c4a3a' }}>
+              <p className="mb-6 leading-relaxed text-sm" style={{ color: '#5c4a3a' }}>
                 Your trusted partner for comprehensive NRI services. We provide expert solutions 
                 in property management, legal assistance, financial consulting, and more.
               </p>
@@ -77,57 +77,41 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="lg:mx-auto">
               <h3 className="text-lg font-bold mb-6 relative inline-block" style={{ color: '#d4af37' }}>
                 Quick Links
                 <div className="absolute bottom-0 left-0 w-1/2 h-0.5" style={{ background: 'linear-gradient(to right, #d4af37, #ffd86b)' }}></div>
               </h3>
               <ul className="space-y-3">
                 <FooterLink href="/" text="Home" />
-               <FooterLink href="/about-us" text="About Us" />
+                <FooterLink href="/about-us" text="About Us" />
                 <FooterLink href="/contact-us" text="Contact Us" />
-                <FooterLink href="/contact" text="Contact" />
-                <FooterLink href="/testimonials" text="Testimonials" />
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Contact Info */}
             <div>
               <h3 className="text-lg font-bold mb-6 relative inline-block" style={{ color: '#d4af37' }}>
-                Our Services
+                Get In Touch
                 <div className="absolute bottom-0 left-0 w-1/2 h-0.5" style={{ background: 'linear-gradient(to right, #d4af37, #ffd86b)' }}></div>
               </h3>
-              <ul className="space-y-3">
-                <FooterLink href="/services/property" text="Property Management" />
-                <FooterLink href="/services/legal" text="Legal Assistance" />
-                <FooterLink href="/services/financial" text="Financial Consulting" />
-                <FooterLink href="/services/banking" text="Banking Solutions" />
-                <FooterLink href="/services/medical" text="Medical Services" />
-              </ul>
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="border-t pt-8" style={{ borderColor: 'rgba(212,175,55,0.3)' }}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <ContactItem 
-                icon="phone"
-                title="Phone"
-                content="+1 (555) 123-4567"
-                href="tel:+15551234567"
-              />
-              <ContactItem 
-                icon="email"
-                title="Email"
-                content="connect@bigbnriservices.com "
-                href="mailto:info@bigb-nri.com"
-              />
-              <ContactItem 
-                icon="location"
-                title="Address"
-                content="123 Business District, Financial City, FC 10001"
-                href="#"
-              />
+              <div className="space-y-4">
+                <ContactItem 
+                  icon="phone"
+                  content="+91 9989103388"
+                  href="tel:+919989103388"
+                />
+                <ContactItem 
+                  icon="email"
+                  content="connect@bigbnriservices.com"
+                  href="mailto:connect@bigbnriservices.com"
+                />
+                <ContactItem 
+                  icon="location"
+                  content="Flat No. 107, Multi Naik Plaza, Abids, Hyderabad – 500001"
+                  href="#"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +148,7 @@ function FooterLink({ href, text }) {
     <li>
       <Link 
         to={href} 
-        className="transition-colors duration-300 hover:underline inline-block transform hover:translate-x-1 transition-transform"
+        className="text-sm transition-colors duration-300 hover:underline inline-block transform hover:translate-x-1 transition-transform"
         style={{ color: '#6b5744' }}
         onMouseEnter={(e) => e.target.style.color = '#d4af37'}
         onMouseLeave={(e) => e.target.style.color = '#6b5744'}
@@ -231,25 +215,25 @@ function SocialIcon({ href, icon }) {
   )
 }
 
-function ContactItem({ icon, title, content, href }) {
+function ContactItem({ icon, content, href }) {
   const getIcon = (iconName) => {
     switch(iconName) {
       case 'phone':
         return (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
         )
       case 'email':
         return (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
         )
       case 'location':
         return (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
             <circle cx="12" cy="10" r="3"/>
           </svg>
@@ -260,17 +244,16 @@ function ContactItem({ icon, title, content, href }) {
   }
 
   return (
-    <div className="flex items-center gap-4">
-      <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #c9a96e 0%, #d4af37 100%)' }}>
+    <div className="flex items-start gap-3">
+      <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 shadow-md" style={{ background: 'linear-gradient(135deg, #c9a96e 0%, #d4af37 100%)' }}>
         <div style={{ color: '#2a2419' }}>
           {getIcon(icon)}
         </div>
       </div>
-      <div>
-        <h4 className="font-semibold mb-1" style={{ color: '#d4af37' }}>{title}</h4>
+      <div className="flex-1">
         <a 
           href={href} 
-          className="transition-colors duration-300"
+          className="text-sm transition-colors duration-300 leading-relaxed block"
           style={{ color: '#6b5744' }}
           onMouseEnter={(e) => e.target.style.color = '#d4af37'}
           onMouseLeave={(e) => e.target.style.color = '#6b5744'}

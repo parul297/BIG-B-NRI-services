@@ -176,10 +176,10 @@ export default function CivilWorks() {
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
+                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
                          style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
                       {index + 1}
-                    </div>
+                    </div> */}
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
@@ -251,7 +251,7 @@ export default function CivilWorks() {
                 Book Consultation
               </button>
               <a 
-                href="https://wa.me/1234567890" 
+                href="https://wa.me/919989103388" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center gap-2"

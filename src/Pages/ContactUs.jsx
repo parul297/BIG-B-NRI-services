@@ -35,8 +35,8 @@ export default function ContactUs() {
       ),
       title: "Call Us",
       details: [
-        { label: "General Inquiries", value: "+1 (555) 123-4567" },
-        { label: "Emergency Support", value: "+1 (555) 987-6543" }
+        { label: "General Inquiries", value: "+91 9989103388" },
+        { label: "Emergency Support", value: "+91 9989103388" }
       ],
       action: "Call Now"
     },
@@ -63,8 +63,8 @@ export default function ContactUs() {
       ),
       title: "Visit Us",
       details: [
-        { label: "Head Office", value: "123 Business District, Financial City" },
-        { label: "Location", value: "Mumbai, India - 400001" }
+        { label: "Head Office", value: "Flat No. 107, 4-1-355 Multi Naik Plaza, Abids" },
+        { label: "Location", value: "Hyderabad – 500001 Telangana, India" }
       ],
       action: "Get Directions"
     }
@@ -452,8 +452,8 @@ export default function ContactUs() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-sm mb-1" style={{color: '#bfa46f'}}>Office Address</div>
-                <div className="font-semibold" style={{color: '#071020'}}>123 Business District</div>
-                <div style={{color: '#5a4a1a'}}>Financial City, Mumbai 400001</div>
+                <div className="font-semibold" style={{color: '#071020'}}>Flat No. 107, 4-1-355 Multi Naik Plaza, Abids</div>
+                <div style={{color: '#5a4a1a'}}>Hyderabad – 500001 Telangana, India</div>
               </div>
               <div className="text-center">
                 <div className="text-sm mb-1" style={{color: '#bfa46f'}}>Parking Available</div>

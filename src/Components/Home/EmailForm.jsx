@@ -16,7 +16,7 @@ export default function ContactForm({
   const [status, setStatus] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const WHATSAPP_NUMBER = '919949987650';
+  const WHATSAPP_NUMBER = '919989103388';
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -119,7 +119,7 @@ _Sent from BigB NRI Services Contact Form_`;
 
   if (!isOpen) return null;
 
-  const FormContent = () => (
+  const formContent = (
     <div className="modal-content" style={{
       background: 'rgba(255, 255, 255, 0.9)',
       backdropFilter: 'blur(20px)',
@@ -127,7 +127,7 @@ _Sent from BigB NRI Services Contact Form_`;
       padding: showAsModal ? '40px' : '50px',
       border: '2px solid rgba(218, 165, 32, 0.15)',
       boxShadow: '0 20px 60px rgba(139, 111, 71, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05)',
-      maxHeight: showAsModal ? '85vh' : 'none',
+      maxHeight: showAsModal ? '95vh' : 'none',
       overflowY: showAsModal ? 'auto' : 'visible',
       overflowX: 'hidden'
     }}>
@@ -250,7 +250,7 @@ _Sent from BigB NRI Services Contact Form_`;
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="+91 98765 43210"
+          placeholder="+91 9989103388"
           style={{
             width: '100%',
             padding: '16px 20px',
@@ -514,7 +514,7 @@ _Sent from BigB NRI Services Contact Form_`;
               <div style={{ textAlign: 'left' }}>
                 <p style={{ margin: 0, fontSize: '13px', color: '#8b7355', fontWeight: '600' }}>Phone</p>
                 <p style={{ margin: '4px 0 0 0', fontSize: '15px', color: '#5d4c35', fontWeight: '500' }}>
-                  +91 98765 43210
+                  +91 9989103388
                 </p>
               </div>
             </div>
@@ -589,7 +589,7 @@ _Sent from BigB NRI Services Contact Form_`;
             </svg>
           </button>
           
-          <FormContent />
+          {formContent}
         </div>
       </div>
     );
@@ -648,7 +648,7 @@ _Sent from BigB NRI Services Contact Form_`;
           </p>
         </div>
 
-        <FormContent />
+        {formContent}
       </div>
 
       <style>{`

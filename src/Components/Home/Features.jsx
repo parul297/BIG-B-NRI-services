@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Features() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,56 +9,65 @@ export default function Features() {
       title: "Civil Works & Construction Services",
       description: "Expert management and maintenance of residential and commercial properties for NRIs.",
       image: "property",
-      tag: "Case Study"
+      // tag: "Case Study"
+      path:"/civil-works",
     },
     {
       title: "Property Management",
       description: "Professional civil construction and renovation services with trusted contractors.",
       image: "civil",
-      tag: "Featured",
-      highlight: true
+      // tag: "Featured",
+      path:"/property-management",
     },
     {
       title: "Vital Records Procurement",
       description: "Hassle-free assistance with birth certificate registration and documentation.",
       image: "birth",
-      tag: "Service"
+      // tag: "Service"
+      path:"/vital-records",
     },
     {
       title: "Complete Document Attestation",
       description: "Professional document attestation services for all your legal requirements.",
       image: "document",
-      tag: "Service"
+      // tag: "Service"
+      path:"/complete-document",
     },
     {
       title: "Online Services",
       description: "Digital solutions for visa, passport, and government document processing.",
       image: "online",
-      tag: "Product Guide"
+      // tag: "Product Guide"
+      path:"/online-services",
     },
     {
       title: "Taxes and Legal",
       description: "Expert financial planning and legal advisory services tailored for NRIs.",
       image: "financial",
-      tag: "Service"
+      // tag: "Service"
+      path:"/taxes-legal",
     },
+  
     {
       title: "Business Consulting/ Registrations",
       description: "Strategic business guidance for NRI entrepreneurs and startup ventures.",
       image: "business",
-      tag: "Service"
+      // tag: "Service"
+      path:"/business-consulting",
     },
     {
       title: "Banking Assistance",
       description: "Complete banking solutions including remittance and investment services.",
       image: "banking",
-      tag: "Service"
+      // tag: "Service"
+      path:"/banking",
     },
     {
       title: "Health/Medical",
       description: "Access to quality healthcare services and medical consultation facilities.",
       image: "health",
-      tag: "Service"
+      // tag: "Service"
+      path:"/health",
     }
   ];
 
@@ -139,7 +149,8 @@ export default function Features() {
   );
 }
 
-function ServiceFeatureCard({ title, description, image, tag, highlight }) {
+function ServiceFeatureCard({ title, description, image, tag, highlight ,path }) {
+   const navigate = useNavigate();
   const getIcon = (imageName) => {
     switch (imageName) {
       case "property":
@@ -205,21 +216,25 @@ function ServiceFeatureCard({ title, description, image, tag, highlight }) {
 
   const getBackgroundPattern = () => {
     const patterns = [
-      "linear-gradient(135deg, #17a2b8 0%, #0d6efd 100%)",
-      "linear-gradient(135deg, #d4af37 0%, #f4d03f 100%)",
-      "linear-gradient(135deg, #0d6efd 0%, #17a2b8 100%)"
+      "linear-gradient(135deg, #17a2b8 0%, #071020 100%)",
+      "linear-gradient(135deg, #071020 0%, #123a57 100%)",
+      "linear-gradient(135deg, #071020 0%, #17a2b8 100%)"
     ];
     return patterns[Math.floor(Math.random() * patterns.length)];
   };
 
   return (
-    <div className="group cursor-pointer rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" style={{ background: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}>
+   <div
+  onClick={() => navigate(path)}
+  className="group cursor-pointer rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+  style={{ background: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
+>
       {/* Image/Pattern Header */}
       <div className="relative h-52 overflow-hidden" style={{ background: getBackgroundPattern() }}>
         {/* Tag Badge */}
-        <div className="absolute top-6 left-6 px-4 py-2 rounded-full text-sm font-bold" style={{ background: "#071020", color: "#ffffff" }}>
+        {/* <div className="absolute top-6 left-6 px-4 py-2 rounded-full text-sm font-bold" style={{ background: "#071020", color: "#ffffff" }}>
           {tag}
-        </div>
+        </div> */}
         
         {/* Icon */}
         <div className="absolute bottom-6 left-6 w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(10px)" }}>
