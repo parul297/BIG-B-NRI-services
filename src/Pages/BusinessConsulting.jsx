@@ -158,10 +158,10 @@ const services = [
                       <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Document Processing</p>
                     </div>
                   </div>
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
+                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
                        style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
                     Service {index + 1}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content */}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer.jsx';
 import Header from '../Components/Layout/Header.jsx';
 import ContactForm from '../Components/Home/EmailForm.jsx';
+import rentalAgrrement from "../assets/rental Agreement.jpg"
 
 export default function PropertyManagement() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -41,7 +42,7 @@ export default function PropertyManagement() {
     {
       title: 'Rental Agreement Services',
       description: 'Professional assistance with drafting and execution of rental/lease agreements tailored to your requirements. All agreements are reviewed by qualified legal professionals and we facilitate communication between owners and tenants to ensure clarity of all contractual obligations.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&h=300&q=80',
+      image: rentalAgrrement,
       features: ['Agreement Drafting', 'Legal Professional Review', 'Customized Terms', 'Owner-Tenant Liaison', 'Legal Compliance', 'Rights & Obligations Clarity']
     }
   ]
@@ -153,24 +154,22 @@ export default function PropertyManagement() {
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                          <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">Property Service</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Professional Management</p>
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(7, 16, 32, 0.7) 0%, rgba(18, 58, 87, 0.5) 100%)'}}></div>
+                
+                  <div className="absolute bottom-4 left-4 right-4 text-center">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                         style={{background: 'rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(10px)'}}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                      </svg>
                     </div>
-                  </div>
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
+                    <p className="text-white font-semibold">Professional Service</p>
                   </div>
                 </div>
 

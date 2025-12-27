@@ -39,9 +39,9 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/about-us" className="nav-link">About</Link>
           <button type="button" onClick={() => setServicesOpen(true)} className="nav-link" aria-haspopup="dialog">Services</button>
-          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/contact-us" className="nav-link">Contact</Link>
         </nav>
 
         <div className="md:hidden">

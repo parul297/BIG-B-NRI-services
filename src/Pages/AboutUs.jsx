@@ -5,36 +5,36 @@ import Footer from "../Components/Layout/Footer";
 
 export default function AboutUs() {
 
-  const teamMembers = [
-    {
-      name: "Rajesh Sharma",
-      position: "Founder & CEO",
-      experience: "25+ Years",
-      expertise: "Property & Legal Services",
-      image: "team-member-1"
-    },
-    {
-      name: "Priya Patel",
-      position: "Legal Director",
-      experience: "18+ Years",
-      expertise: "NRI Legal Matters",
-      image: "team-member-2"
-    },
-    {
-      name: "Arjun Mehta",
-      position: "Financial Advisor",
-      experience: "20+ Years",
-      expertise: "Investment & Banking",
-      image: "team-member-3"
-    },
-    {
-      name: "Sunita Reddy",
-      position: "Operations Head",
-      experience: "15+ Years",
-      expertise: "Service Management",
-      image: "team-member-4"
-    }
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "Rajesh Sharma",
+  //     position: "Founder & CEO",
+  //     experience: "25+ Years",
+  //     expertise: "Property & Legal Services",
+  //     image: "team-member-1"
+  //   },
+  //   {
+  //     name: "Priya Patel",
+  //     position: "Legal Director",
+  //     experience: "18+ Years",
+  //     expertise: "NRI Legal Matters",
+  //     image: "team-member-2"
+  //   },
+  //   {
+  //     name: "Arjun Mehta",
+  //     position: "Financial Advisor",
+  //     experience: "20+ Years",
+  //     expertise: "Investment & Banking",
+  //     image: "team-member-3"
+  //   },
+  //   {
+  //     name: "Sunita Reddy",
+  //     position: "Operations Head",
+  //     experience: "15+ Years",
+  //     expertise: "Service Management",
+  //     image: "team-member-4"
+  //   }
+  // ];
 
   const milestones = [
     { year: "2008", title: "Company Founded", description: "Started with focus on NRI property management", icon: "🚀" },
@@ -447,7 +447,7 @@ export default function AboutUs() {
         </div>
       </div>
       {/* Our Team */}
-      <div className="container mx-auto px-4 py-20">
+      {/* <div className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{color: '#071020'}}>
             Leadership Team
@@ -488,7 +488,7 @@ export default function AboutUs() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Final CTA */}
       <div className="container mx-auto px-4 pb-20">
