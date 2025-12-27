@@ -8,7 +8,7 @@ import documents from "../../assets/documents and certificate.jpeg";
 import health from "../../assets/health and medical.jpeg";
 import online from "../../assets/online services.jpeg";
 import property from "../../assets/property management.jpeg";
-import rental from "../../assets/rental Agreement.jpg";
+// import rental from "../../assets/rental Agreement.jpg";
 import taxes from "../../assets/taxes and legal.jpeg";
 import vitalRecord from "../../assets/vital record.jpeg";
 
