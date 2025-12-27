@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Image imports
 import bankingAssistance from "../../assets/Banking Assistance.jpeg";
-import civilWorks from "../../assets/Civil Works.jpeg";
+import civilWorks from "../../assets/civil works.jpeg";
 import documents from "../../assets/documents and certificate.jpeg";
 import health from "../../assets/health and medical.jpeg";
 import online from "../../assets/online services.jpeg";
