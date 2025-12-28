@@ -2,6 +2,11 @@ import { useState } from 'react'
 import Header from '../Components/Layout/Header'
 import Footer from '../Components/Layout/Footer'
 import ContactForm from '../Components/Home/EmailForm';
+import GAD from "../assets/GADAttestation.jpeg";
+import HRD from "../assets/HRDAttestation.jpeg";
+import MEA from "../assets/MEAattestation.jpeg";
+import apostile from "../assets/ApostilleAttestation.jpeg";
+import visa from "../assets/visaEndorsment.jpeg";
 
 export default function DocumentAttestation() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -9,32 +14,32 @@ export default function DocumentAttestation() {
   const services = [
     {
       title: 'GAD Attestation',
+      image: GAD,
       description: 'GAD Attestation refers to the authentication of personal and educational documents by the General Administration Department (GAD) of the respective state government. This attestation confirms that the certificate is genuine and has been verified by authorized state officials. Required for individuals traveling abroad for employment, education, migration, or other official purposes.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Degree & Diploma Certificates', 'Birth & Marriage Certificates', 'Transfer & Bonafide Certificates', 'Experience Certificates', 'Personal Documents', 'All State-Level Authentication']
     },
     {
       title: 'HRD Attestation',
+      image: HRD,
       description: 'HRD (Human Resource Development) Attestation is the process of authenticating educational documents by the respective State HRD Department. It is a mandatory step for individuals planning to study, work, or migrate abroad, as foreign authorities require verified and genuine educational certificates.',
-      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Degree Certificates', 'Diploma Certificates', 'HSC / SSLC Mark Sheets', 'Transcripts', 'Nursing, Engineering & Medical Certificates', 'State & Central Board Documents']
     },
     {
       title: 'MEA Attestation',
+      image: MEA,
       description: 'MEA Attestation is the official verification of documents by the Ministry of External Affairs (MEA), Government of India. It is a mandatory step for anyone planning to work, study, migrate, or travel abroad, as it confirms the authenticity of documents after state-level verification.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Degree & Diploma Certificates', 'Birth & Marriage Certificates', 'PCC, Medical & Affidavits', 'Commercial Documents', 'Company Documents', 'Post State-Level Verification']
     },
     {
       title: 'Apostille Attestation',
+      image: apostile,
       description: 'Apostille Attestation is the process of certifying documents for use in countries that are members of the Hague Convention of 1961. An Apostille is a unique, internationally accepted stamp issued by the Ministry of External Affairs (MEA), Government of India, requiring no further embassy attestation in Hague member countries.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Degree & Diploma Certificates', 'Birth & Marriage Certificates', 'PCC & Medical Documents', 'Commercial Papers', 'Business Documents', 'Hague Convention Countries']
     },
     {
       title: 'Visa Endorsements',
+      image: visa,
       description: 'Visa Endorsement is the official process of stamping, approving, or updating a visa on your passport by the respective embassy, consulate, or immigration authority. It confirms your eligibility to enter, work, study, or reside in a foreign country. We handle all embassy procedures to ensure your passport is approved without delays.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Work Visas', 'Student Visas', 'Family/Residence Visas', 'Business Travel', 'Fast Processing', 'Safe Passport Handling']
     }
   ]
@@ -142,33 +147,18 @@ export default function DocumentAttestation() {
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">Official Attestation</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Verified & Certified</p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br"></div>
+              
                 </div>
 
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
-                         style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
-                      {index + 1}
-                    </div> */}
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   

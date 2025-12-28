@@ -2,6 +2,9 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
+import NRIaccount from "../assets/NRI Accounts.jpeg";
+import bankLockers from "../assets/BankLockers.jpeg";
+import otherBanking from "../assets/otherBanking.jpeg";
 
 export default function Banking() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -9,16 +12,19 @@ export default function Banking() {
 const services = [
   {
     title: 'NRI Accounts (NRE/NRO Account)',
+    image: NRIaccount,
     description: 'BIG B NRI Services provides expert assistance in opening and managing NRI bank accounts (NRE/NRO) with seamless documentation and compliance support.',
     features: ['NRE & NRO Account Opening', 'Assistance in opening NRE accounts for tax-free repatriable funds', 'Assistance in opening NRO accounts for income earned in India', 'Guidance on document preparation and submission', 'Online account management support', 'Fund transfer assistance']
   },
   {
     title: 'Bank Lockers',
+    image: bankLockers,
     description: 'BIG B NRI Services provides expert assistance in securing bank lockers in India with reputed banks, ensuring safety for your valuables and important documents.',
     features: ['Assistance in booking lockers at reputed banks', 'Guidance on selecting locker size and type', 'Document preparation and verification for locker allocation', 'Locker rental agreement support', 'Annual renewal assistance', 'Emergency access procedures']
   },
   {
     title: 'Other Banking Requirements',
+    image: otherBanking,
     description: 'BIG B NRI Services provides comprehensive support for any specific or specialized banking requirements in India, tailored for NRIs, expatriates, and domestic clients.',
     features: ['Investment account setup', 'Loan application assistance', 'Credit card services', 'Wealth management support', 'Insurance product guidance', 'Digital banking setup']
   }
@@ -129,27 +135,12 @@ const services = [
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">
-                        {service.title.includes('NRI') ? 'NRI Banking' : 
-                         service.title.includes('Locker') ? 'Secure Storage' : 'Banking Support'}
-                      </p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Expert Assistance</p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br "></div>
                 </div>
 
                 {/* Content */}

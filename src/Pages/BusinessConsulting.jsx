@@ -2,6 +2,12 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
+import importCode from "../assets/ImportExportCode.jpeg";
+import tradeMark from "../assets/TrademarkRegestrations.jpeg";
+import trustRegestration from "../assets/TrustRegestrations.jpeg";
+import societyRegestration from "../assets/SocietyRegestrations.jpeg";
+import PLC from "../assets/PrivateLimitedCompany.jpeg";
+import frimRegestrationn from "../assets/FirmRegestrations.jpeg";
 
 export default function BusinessConsulting() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -9,31 +15,37 @@ export default function BusinessConsulting() {
 const services = [
   {
     title: 'Company & Firm Registrations',
+    image: frimRegestrationn,
     description: 'We provide complete assistance for registering your business in India. Whether you want to set up a Proprietorship, Partnership, Private Limited Company, LLP, or any other business structure, we guide you through the entire process ensuring smooth, legal, and hassle-free registration with complete compliance.',
     features: ['Company Incorporation', 'Name Approval (MCA)', 'MoA & AoA Drafting', 'PAN & TAN Registration', 'GST Registration', 'Partnership Deed Drafting']
   },
   {
     title: 'Society & Trust Registrations',
+    image: trustRegestration,
     description: 'Complete assistance for registering societies and trusts in India. We help individuals, NRIs, and groups establish non-profit organizations, charitable trusts, educational institutions, or social service organizations under the Societies Registration Act, 1860 or Indian Trusts Act, 1882 in a legally compliant manner.',
     features: ['Society Registration', 'Trust Registration', 'MoA & Rules Drafting', 'Certificate Procurement', 'Annual Compliance Support', 'Amendment Assistance']
   },
   {
     title: 'Import/Export Code & Trade License',
+    image: importCode,
     description: 'We provide complete assistance for obtaining Import/Export Code (IEC), a mandatory requirement for businesses involved in international trade. Our services help entrepreneurs, NRIs, and companies start their import/export operations smoothly and compliantly, including liaison with DGFT and related authorities.',
     features: ['IEC Registration', 'DGFT Coordination', 'Eligibility Guidance', 'Application Processing', 'NRI Support', 'Trade License Facilitation']
   },
   {
     title: 'Trademark & Labour License',
+    image: tradeMark,
     description: 'Professional assistance for securing Trademark Registration to protect your brand identity and obtaining Labour Licenses under the Contract Labour Act, 1970. We ensure your operations remain fully compliant, legally protected, and ready to engage contract labour without any regulatory challenges.',
     features: ['Trademark Registration', 'Brand Protection', 'Labour License Procurement', 'Statutory Compliance', 'State Rules Adherence', 'Regulatory Support']
   },
   {
     title: 'EPF & ESIC Registrations',
+    image: PLC,
     description: 'Comprehensive assistance for Employee Provident Fund (EPF) and Employee State Insurance Corporation (ESIC) registration and filings. We help businesses comply with statutory requirements, ensuring timely contributions, accurate filings, and smooth compliance with EPFO and ESIC authorities.',
     features: ['EPF Registration & Filing', 'ESIC Registration & Filing', 'Monthly Contributions', 'Accurate Calculations', 'NRI Employee Support', 'Penalty Avoidance']
   },
   {
     title: 'Business Agreements & Legal Documents',
+    image: societyRegestration,
     description: 'We offer comprehensive assistance in drafting, reviewing, and managing all kinds of agreements for individuals, businesses, and NRIs. Our services ensure that your agreements are legally sound, enforceable, and tailored to your specific needs, providing clarity and protection in all business and personal transactions.',
     features: ['Partnership Agreements', 'MoU Drafting', 'Rental/Lease Agreements', 'Employment Contracts', 'Sale/Purchase Agreements', 'Franchise Agreements']
   }
@@ -143,34 +155,18 @@ const services = [
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                          <polyline points="14 2 14 8 20 8"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">Online Service</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Document Processing</p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover "
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br "></div>
+                 
                 </div>
 
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
-                         style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
-                      {index + 1}
-                    </div> */}
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   

@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-// Image imports
 import bankingAssistance from "../../assets/Banking Assistance.jpeg";
 import civilWorks from "../../assets/civil works.jpeg";
 import documents from "../../assets/documents and certificate.jpeg";
@@ -12,14 +10,15 @@ import property from "../../assets/property management.jpeg";
 import taxes from "../../assets/taxes and legal.jpeg";
 import vitalRecord from "../../assets/vital record.jpeg";
 
+
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      // title: "Banking Assistance for NRIs",
-      // description:
-      //   "Hassle-free banking solutions including account management, remittances, and compliance support.",
+      title: "Banking Assistance for NRIs",
+      description:
+        "Hassle-free banking solutions including account management, remittances, and compliance support.",
       image: bankingAssistance,
     },
     {

@@ -2,7 +2,12 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer.jsx';
 import Header from '../Components/Layout/Header.jsx';
 import ContactForm from '../Components/Home/EmailForm.jsx';
-import rentalAgrrement from "../assets/rental Agreement.jpg"
+import buying from "../assets/buyingandselling.jpeg";
+import tenant from "../assets/tenant Management.jpeg"
+import encumbrance from "../assets/Encumbrance cetrificate.jpeg";
+import propertyMaintaince from "../assets/Property Maintaince.jpeg";
+import propertyInsecption from "../assets/property insepection .jpeg";
+import rental from "../assets/RentalAgreement.jpeg";
 
 export default function PropertyManagement() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -12,37 +17,37 @@ export default function PropertyManagement() {
     {
       title: 'Buying / Selling Assistance',
       description: 'Complete verification and due diligence for your property transactions. We physically inspect properties, verify ownership records, geo-tag locations, and ensure all documents are reviewed by reputed lawyers. Our relationship manager stays with you throughout the entire process.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&h=300&q=80',
+      image: buying,
       features: ['Physical Property Inspection', 'Document Verification by Lawyer', 'GPS Geo-tagging', 'Encumbrance Certificate Assistance', 'Sale Deed Drafting', 'Registration Support']
     },
     {
       title: 'Encumbrance Certificate',
       description: 'Comprehensive assistance in obtaining statutory property-related documents on behalf of non-resident property owners. We handle all administrative tasks including retrieval of Encumbrance Certificates, Khata/Patta documents from jurisdictional authorities without requiring your physical presence.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
+      image: encumbrance,
       features: ['Encumbrance Certificate Retrieval', 'Khata/Patta Documents', 'Application Submission', 'Follow-up & Collection', 'Legal Compliance', 'No Physical Presence Required']
     },
     {
       title: 'Tenant Management & Vacating Inspections',
       description: 'Complete tenant management services including pre-tenancy inspection, inventory preparation, rent collection and remittance, periodic property inspections with reports, and comprehensive exit inventory checks to verify property condition upon tenancy termination.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&h=300&q=80',
+      image: tenant,
       features: ['Pre-tenancy Inspection', 'Inventory Documentation', 'Rent Collection & Remittance', 'Periodic Property Inspections', 'Exit Inventory Check', 'Tenant Coordination']
     },
     {
       title: 'Final Handover Inspection (New Construction)',
       description: 'Complete final-handover inspection for newly constructed properties. Our experts review structural work, electrical systems, plumbing, waterproofing, finishes, fixtures, and safety features. We document every observation with photos and detailed notes to ensure defect-free delivery.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&h=300&q=80',
+      image: propertyInsecption,
       features: ['Structural Work Review', 'Electrical Systems Check', 'Plumbing Inspection', 'Waterproofing Verification', 'Photo Documentation', 'Detailed Defect Reports']
     },
     {
       title: 'Property Maintenance',
       description: 'Comprehensive, end-to-end upkeep and care of your property year-round. Our services include routine inspections, preventive maintenance, deep cleaning, repair coordination, utility monitoring, and security checks. We provide transparent updates and photo reports for complete peace of mind.',
-      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&h=300&q=80',
+      image: propertyMaintaince,
       features: ['Routine Inspections', 'Preventive Maintenance', 'Deep Cleaning Services', 'Repair Coordination', 'Utility Monitoring', 'Photo Reports & Updates']
     },
     {
       title: 'Rental Agreement Services',
       description: 'Professional assistance with drafting and execution of rental/lease agreements tailored to your requirements. All agreements are reviewed by qualified legal professionals and we facilitate communication between owners and tenants to ensure clarity of all contractual obligations.',
-      image: rentalAgrrement,
+      image: rental,
       features: ['Agreement Drafting', 'Legal Professional Review', 'Customized Terms', 'Owner-Tenant Liaison', 'Legal Compliance', 'Rights & Obligations Clarity']
     }
   ]
@@ -159,17 +164,17 @@ export default function PropertyManagement() {
                     alt={service.title}
                     className="w-full h-64 md:h-full object-cover"
                   />
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(7, 16, 32, 0.7) 0%, rgba(18, 58, 87, 0.5) 100%)'}}></div>
+                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg,'}}></div>
                 
                   <div className="absolute bottom-4 left-4 right-4 text-center">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
                          style={{background: 'rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(10px)'}}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                         <polyline points="9 22 9 12 15 12 15 22"/>
                       </svg>
-                    </div>
-                    <p className="text-white font-semibold">Professional Service</p>
+                    </div> */}
+                    {/* <p className="text-white font-semibold">Professional Service</p> */}
                   </div>
                 </div>
 
