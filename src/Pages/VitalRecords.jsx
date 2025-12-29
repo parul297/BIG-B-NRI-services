@@ -2,6 +2,12 @@ import { useState } from 'react'
 import Header from '../Components/Layout/Header.jsx'
 import Footer from '../Components/Layout/Footer.jsx';
 import ContactForm from '../Components/Home/EmailForm.jsx';
+import NABC from "../assets/NABC.jpeg";
+import marriage from "../assets/MarriageCertificate.jpeg";
+import death from "../assets/DeathCetificate.jpeg";
+import caste from "../assets/CasteCertificate.jpeg";
+import income from "../assets/IncomeCertificate.jpeg";
+import birth from "../assets/birthCertificate.jpeg";
 
 export default function VitalRecords() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -9,31 +15,37 @@ export default function VitalRecords() {
   const services = [
     {
       title: 'Birth Certificate',
+      image: birth,
       description: 'A Birth Certificate is a vital document serving as the first official record issued after birth. It provides essential proof of identity and forms the foundation for citizenship-related rights and various legal and administrative processes. We facilitate the entire process on behalf of the applicant, handling municipal records searches and name additions as needed.',
       features: ['Initial Registration Support', 'Name Addition Services', 'Municipal Records Search', 'Authorization Letter Processing', 'English Certificate Assistance', 'Complete Documentation Support']
     },
     {
       title: 'Non-Availability of Birth Certificate',
+      image: NABC,
       description: 'We assist in procuring a Non-Availability of Birth Certificate (NABC) or Birth Identity Certificate from relevant municipal or government authorities. Our services include conducting searches of official records based on your date of birth and parents\' names, coordinating with authorities, and facilitating certificate issuance.',
       features: ['Official Records Search', 'Authority Coordination', 'NABC Procurement', 'Birth Identity Certificate', 'Email Scanned Copies', 'Courier Delivery in India']
     },
     {
       title: 'Marriage Certificate',
+      image: marriage,
       description: 'We assist in obtaining Marriage Certificates from relevant municipal or government authorities in India. Our services include verification of marriage registration records, preparation and submission of applications on your behalf, and coordination with authorities to facilitate issuance of the certificate.',
       features: ['Registration Verification', 'Application Preparation', 'Authority Coordination', 'Authorization Processing', 'Digital Copies via Email', 'Physical Delivery Support']
     },
     {
       title: 'Death Certificate',
+      image: death,
       description: 'A Death Certificate is an official document issued by the Municipality or Government authority recording the date, fact, and cause of death. We assist in obtaining Death Certificates by searching relevant offices, requesting certificates on your behalf, and providing both digital and physical copies as needed.',
       features: ['Municipal Office Search', 'Certificate Procurement', 'Authorization Support', 'Scanned Email Delivery', 'Courier Service in India', 'International Delivery Available']
     },
     {
       title: 'Income Certificate',
+      image: income,
       description: 'An Income Certificate is an official government document certifying an individual\'s annual income. Commonly required for scholarships, government benefits, property transactions, taxation, and other legal or financial matters. We guide you through documentation, prepare applications, and coordinate with local offices.',
       features: ['Documentation Guidance', 'Eligibility Assessment', 'Application Preparation', 'Local Office Coordination', 'Application Follow-up', 'Certificate Delivery']
     },
     {
       title: 'Caste Certificate',
+      image: caste,
       description: 'A Caste Certificate is an official government document certifying an individual\'s caste or community. Required for government benefits, educational admissions, reservations, employment, and legal purposes. We assist with eligibility verification, documentation, and application submission to relevant authorities.',
       features: ['Eligibility Guidance', 'Documentation Support', 'Application Submission', 'Authority Coordination', 'Follow-up Services', 'Certificate Procurement']
     }
@@ -103,47 +115,6 @@ export default function VitalRecords() {
         </div>
       </div>
 
-      {/* Important Notice */}
-      {/* <div className="container mx-auto px-4 py-8">
-        <div className="rounded-2xl p-6 md:p-8" style={{
-          background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%)',
-          border: '2px solid rgba(212, 175, 55, 0.3)'
-        }}>
-          <div className="flex gap-4">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center"
-                   style={{background: 'rgba(212, 175, 55, 0.2)'}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b08a2f" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 16v-4M12 8h.01"/>
-                </svg>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-3" style={{color: '#071020'}}>Important Notes</h3>
-              <ul className="space-y-2" style={{color: '#5a4a1a'}}>
-                <li className="flex gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">BIGB NRI facilitates document procurement but shall not be held responsible for inaccuracies in government records or original registrations.</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">While we strive to obtain certificates in English, issuance in regional or vernacular language cannot be guaranteed.</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">We shall not be liable for bureaucratic delays or delays arising from incomplete, insufficient, or late submission of information by the client.</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">Physical delivery within India is provided via courier at no additional charge; international courier services are subject to applicable charges.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Services Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-16">
@@ -184,26 +155,12 @@ export default function VitalRecords() {
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                          <polyline points="14 2 14 8 20 8"/>
-                          <path d="M16 13H8M16 17H8M10 9H8"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">Official Certificate</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Government Procurement</p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br "></div>
                 </div>
 
                 {/* Content */}

@@ -2,8 +2,10 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
-
-
+import emergecny from "../assets/emergency.jpeg";
+import healthHome from "../assets/homeHealth.jpeg";
+import medicineDelivery from "../assets/medicineDelivery.jpeg";
+import sample from "../assets/sampleCollection.jpeg";
 
 export default function Health() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -11,21 +13,25 @@ export default function Health() {
 const services = [
   {
     title: 'Medicine Delivery',
+    image: medicineDelivery,
     description: 'Purchasing medicines can be challenging, especially for elderly or less-mobile patients who cannot easily visit pharmacies. BIGB NRI provides assistance in procuring medicines in India and ensuring timely delivery.',
     features: ['Procuring medicines locally in India for patients unable to do so themselves', 'Coordinating monthly deliveries for patients on regular medication', 'Prescription management and verification', 'Quality assurance and authenticity checks', 'Timely doorstep delivery', 'Emergency medicine assistance']
   },
   {
     title: 'Home Health Assistance',
+    image: healthHome,
     description: 'BIG B NRI Services facilitates professional home health care for aging parents, grandparents, or patients recovering at home. Our services include skilled nursing and medical care with elderly and post-surgery support.',
     features: ['Skilled nursing and medical care', 'Elderly and post-surgery support', 'Daily health monitoring', 'Medication management assistance', 'Physical therapy coordination', 'Regular health check-ups at home']
   },
   {
     title: 'Laboratory Services',
+    image: sample,
     description: 'For aging parents or grandparents, visiting a laboratory for diagnostic tests can be stressful and inconvenient. BIG B NRI Services ensures comfort and ease by providing comprehensive support for all laboratory and diagnostic needs.',
     features: ['Scheduling appointments and coordinating with labs', 'Home sample collection services (where available)', 'Assistance with reports, documentation, and follow-ups', 'Multiple test coordination', 'Digital report delivery', 'Doctor consultation coordination']
   },
   {
     title: 'Second Opinion & Emergency Medical Consultants',
+    image: emergecny,
     description: 'BIG B NRI Services provides NRIs and their families with quick access to expert medical second opinions and emergency consultants. We help with reviewing medical reports and treatment options while coordinating with hospitals and doctors.',
     features: ['Reviewing medical reports and treatment options', 'Coordinating with hospitals and doctors', 'Guidance during medical emergencies', 'Specialist doctor referrals', 'Treatment plan evaluation', 'Emergency response coordination']
   }
@@ -138,35 +144,12 @@ const services = [
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          {index === 0 && <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>}
-                          {index === 1 && <path d="M3 12h3M12 3v3m4.5-3.5l-2 2M21 12h-3m-6 6v3m-4.5-3.5l2 2M12 12l9-9M3 21l9-9"/>}
-                          {index === 2 && <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>}
-                          {index === 3 && <path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>}
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">
-                        {service.title.includes('Medicine') ? 'Pharmacy Services' : 
-                         service.title.includes('Home') ? 'Home Care' : 
-                         service.title.includes('Laboratory') ? 'Diagnostic Support' : 'Medical Consultation'}
-                      </p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>
-                        {index === 0 ? 'Doorstep Delivery' : 
-                         index === 1 ? 'Professional Care' : 
-                         index === 2 ? 'Reliable Testing' : 'Expert Guidance'}
-                      </p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br"></div>
                 </div>
 
                 {/* Content */}

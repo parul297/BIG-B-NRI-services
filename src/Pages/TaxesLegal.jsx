@@ -2,6 +2,10 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
+import IT from "../assets/ITnotice.jpeg";
+import ITR from "../assets/ITRfiling.jpeg";
+import legal from "../assets/legalOpinion.jpeg";
+import legalisation from "../assets/legalisation.jpeg";
 
 export default function TaxesLegal() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -9,8 +13,8 @@ export default function TaxesLegal() {
   const services = [
     {
       title: 'IT Notices & Tax Authority Assistance',
+      image: IT,
       description: 'NRIs carrying out financial transactions in India may receive queries or notices from the Income Tax Department. We provide assistance in handling these matters on your behalf, ensuring proper representation and support during the process. This includes submitting detailed explanations, providing supporting documentation, and coordinating with relevant government officials to resolve the matter.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Notice Review & Analysis',
 'Documentation Support',
 'Tax Office Coordination',
@@ -20,8 +24,8 @@ export default function TaxesLegal() {
     },
     {
       title: 'Legal Consultation & Lawyer Arrangement',
+      image: legal,
       description: ' NRIs dealing with legal challenges in India can count on us for comprehensive support. We connect you with reputable and highly competent legal professionals best suited to handle your case effectively. Our services include arranging experienced lawyers, facilitating legal opinions, and coordinating with legal firms experienced in cases similar to yours.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
       features: [ 'Experienced Lawyer Connections',
 'Legal Opinion Facilitation',
 'Case-Specific Expertise',
@@ -31,8 +35,8 @@ export default function TaxesLegal() {
     },
     {
       title: 'Income Tax Return (ITR) Filing',
+      image: ITR,
       description: 'Filing an Income Tax Return is mandatory for NRIs whose income in India exceeds prescribed exemption limits. We assist by connecting you with qualified Chartered Accountants, preparing and filing returns accurately, and providing guidance on documents, exemptions, and deductions applicable to NRIs. Our experts ensure efficient filing in full compliance with Indian regulations.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['CA Connection Services',
 'Accurate ITR Preparation',
 'NRI-Specific Guidance',
@@ -42,8 +46,8 @@ export default function TaxesLegal() {
     },
     {
       title: 'Document Legalization & Attestation',
+      image: legalisation,
       description: 'Many documents require proper legalization, notarization, or attestation for legal acceptance. We handle every step with precision and professionalism, providing seamless end-to-end documentation support exclusively for NRIs. From guidance to final delivery, we ensure your documents are processed quickly, correctly, and without hassle.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Document Legalization',
 'Notarization Services',
 'Attestation Support',
@@ -155,34 +159,17 @@ export default function TaxesLegal() {
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                          <polyline points="14 2 14 8 20 8"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">Online Service</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Document Processing</p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br"></div>
                 </div>
 
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
-                         style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
-                      {index + 1}
-                    </div> */}
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   

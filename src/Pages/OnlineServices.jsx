@@ -2,6 +2,11 @@ import { useState } from 'react'
 import Footer from '../Components/Layout/Footer';
 import Header from '../Components/Layout/Header';
 import ContactForm from '../Components/Home/EmailForm';
+import PAN from "../assets/PANcard.jpeg";
+import GHMC from "../assets/GHMC.jpeg";
+import utility from "../assets/utilityBill.jpeg";
+import passport from "../assets/PassportServices.jpeg";
+import aadhar from "../assets/aadharCard.jpeg";
 
 export default function OnlineServices() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -9,32 +14,32 @@ export default function OnlineServices() {
   const services = [
     {
       title: 'Aadhaar Card Services',
+      image: aadhar,
       description: 'Complete assistance for Aadhaar card applications, corrections, and updates including changes in Name, Date of Birth, Address, Mobile Number and other demographic details. We guide you through the required documents and handle the submission process to relevant authorities.',
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['New Aadhaar Application', 'Name/DOB Corrections', 'Address Updates', 'Mobile Number Updates', 'Document Guidance', 'Application Submission Support']
     },
     {
       title: 'PAN Card Services',
+      image: PAN,
       description: 'Professional assistance for PAN card applications, corrections, and updates. We handle changes to Name, Date of Birth, Address, Mobile Number and track your application until the PAN card is issued. Scanned copies provided via email with physical delivery assistance available.',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['New PAN Application', 'Corrections & Updates', 'NSDL/UTIITSL Processing', 'Application Tracking', 'Email Scanned Copies', 'Physical Delivery Support']
     },
     {
       title: 'Passport Services',
+      image: passport,
       description: 'End-to-end support for passport applications and renewals through Passport Seva Kendra (PSK) or Indian Mission/Consulate. We provide guidance on documents, coordinate appointments, handle follow-ups, and keep you updated on application status and delivery.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['New Passport Application', 'Passport Renewal', 'Document Preparation', 'PSK Appointment Coordination', 'Status Updates', 'Delivery Tracking']
     },
     {
       title: 'GHMC Property Tax Management',
+      image: GHMC,
       description: 'Stay worry-free while abroad as we handle all your statutory payments including municipal taxes, property taxes, and other government dues. We track deadlines, coordinate with government offices, and remind you of upcoming payment due dates.',
-      image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Property Tax Payment', 'Municipal Tax Handling', 'Deadline Tracking', 'Government Office Coordination', 'Payment Reminders', 'Statutory Compliance']
     },
     {
       title: 'Utility Bill Payment Management',
+      image: utility,
       description: 'Comprehensive management of all your recurring utility bills from abroad. We handle electricity, water, TV/cable, internet, society maintenance charges and coordinate with service providers to ensure timely payments with regular reminders.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&h=300&q=80',
       features: ['Electricity Bill Payment', 'Water Bill Management', 'TV/Cable/Internet Bills', 'Society Maintenance', 'Due Date Tracking', 'Service Provider Coordination']
     }
   ]
@@ -144,34 +149,17 @@ export default function OnlineServices() {
               <div className={`md:flex items-stretch ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Image Section */}
                 <div className="md:w-2/5 relative overflow-hidden">
-                  <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(185, 143, 43, 0.1) 100%)'}}></div>
-                  <div className="h-64 md:h-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                           style={{background: 'rgba(255, 255, 255, 0.1)'}}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                          <polyline points="14 2 14 8 20 8"/>
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold text-lg">Online Service</p>
-                      <p className="mt-2 text-sm" style={{color: '#e6c56a'}}>Document Processing</p>
-                    </div>
-                  </div>
-                  {/* <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold"
-                       style={{background: 'rgba(255, 255, 255, 0.9)', color: '#b08a2f'}}>
-                    Service {index + 1}
-                  </div> */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br "></div>
                 </div>
 
                 {/* Content */}
                 <div className="md:w-3/5 p-8 md:p-12">
                   <div className="flex items-start gap-3 mb-4">
-                    {/* <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0"
-                         style={{background: 'linear-gradient(135deg, #d4af37 0%, #b98f2b 100%)'}}>
-                      {index + 1}
-                    </div> */}
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
