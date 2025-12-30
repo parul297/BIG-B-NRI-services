@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import bankingAssistance from "../../assets/Banking Assistance.jpeg";
-import civilWorks from "../../assets/civil works.jpeg";
-import documents from "../../assets/documents and certificate.jpeg";
-import health from "../../assets/health and medical.jpeg";
-import online from "../../assets/online services.jpeg";
-import property from "../../assets/property management.jpeg";
-// import rental from "../../assets/rental Agreement.jpg";
-import taxes from "../../assets/taxes and legal.jpeg";
-import vitalRecord from "../../assets/vital record.jpeg";
+import Document from "../../assets/DocumentAttestation.jpeg";
+import vital from "../../assets/vitalRecordsCarousel.jpeg";
+import online from "../../assets/CarouselonlineServices.jpeg"
+import taxes from "../../assets/carouselTaxesAndLegal.jpeg";
+import business from "../../assets/CarouselBusinessConsulting.jpeg"
 
 
 export default function Hero() {
@@ -19,25 +15,31 @@ export default function Hero() {
       title: "Banking Assistance for NRIs",
       description:
         "Hassle-free banking solutions including account management, remittances, and compliance support.",
-      image: bankingAssistance,
+      // image: bankingAssistance,
     },
     {
       title: "Civil Works & Maintenance",
       description:
         "Trusted civil works, repairs, and maintenance services for your property in India.",
-      image: civilWorks,
+      // image: civilWorks,
+    },
+    {
+      title: "Business Consulting",
+      description:
+        "Professional business consulting and advisory services for NRIs.",
+      // image: business,
     },
     {
       title: "Documents & Certificates",
       description:
         "Assistance with document procurement, attestation, and certificate services.",
-      image: documents,
+      image: Document,
     },
     {
       title: "Health & Medical Support",
       description:
         "Medical coordination, hospital assistance, and healthcare support for your family.",
-      image: health,
+      // image: health,
     },
     {
       title: "Online Services",
@@ -49,7 +51,7 @@ export default function Hero() {
       title: "Property Management",
       description:
         "End-to-end property management including rent, maintenance, and inspections.",
-      image: property,
+      // image: property,
     },
     // {
     //   title: "Rental Agreement Services",
@@ -67,7 +69,7 @@ export default function Hero() {
       title: "Vital Records",
       description:
         "Birth, marriage, and other vital record services without hassle.",
-      image: vitalRecord,
+      image: vital,
     },
   ];
 
@@ -143,7 +145,7 @@ export default function Hero() {
 
                   <div className="flex flex-wrap gap-4">
                     <a
-                      href="#"
+                      href=''
                       className="px-6 py-3 rounded-md shadow-lg transition-transform hover:scale-105"
                       style={{
                         background:
@@ -153,17 +155,6 @@ export default function Hero() {
                       }}
                     >
                       Get Started
-                    </a>
-                    <a
-                      href="#"
-                      className="px-6 py-3 rounded-md border-2 transition-all hover:bg-white hover:bg-opacity-10"
-                      style={{
-                        borderColor: "#d4af37",
-                        color: "#ffffff",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Learn More
                     </a>
                   </div>
                 </div>

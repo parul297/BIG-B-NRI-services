@@ -169,7 +169,7 @@ export default function VitalRecords() {
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
-                  <p className="mb-6 leading-relaxed text-base" style={{color: '#5a4a1a'}}>{service.description}</p>
+                  <p className="mb-6 leading-relaxed text-base font-medium" style={{color: '#5a4a1a'}}>{service.description}</p>
                   
                   <div className="mb-6">
                     <h4 className="font-semibold mb-3 flex items-center gap-2" style={{color: '#071020'}}>
@@ -182,7 +182,7 @@ export default function VitalRecords() {
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2" style={{color: '#5a4a1a'}}>
                           <div className="w-2 h-2 rounded-full flex-shrink-0" style={{background: '#d4af37'}}></div>
-                          <span className="text-sm">{feature}</span>
+                          <span className="text-sm font-medium">{feature}</span>
                         </div>
                       ))}
                     </div>

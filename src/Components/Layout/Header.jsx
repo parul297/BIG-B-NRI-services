@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import bigBlOGO from "../../assets/BigB logo.jpg"
+// import bigBlOGO from "../../assets/BigB logo.jpg"
+// import BIGBlogo from "../../assets/BIGBLOGO.jpeg"
+import bigblogo from "../../assets/BIGBLOGO-removebg-preview.png"
 import React from 'react'
 
 export default function Header() {
@@ -11,27 +13,39 @@ export default function Header() {
   return (
     <header style={{ background: 'linear-gradient(90deg,#071020 0%,#0b2740 100%)', color: '#d4af37', borderBottom: '3px solid #d4af37' }} className="shadow">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-4">
+    <Link to="/" className="flex items-center gap-4">
           <div style={{
-            background: 'white',
-            padding: '8px 20px',
+            padding: '6px 12px',
             borderRadius: '8px',
+            background: 'white',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(212, 175, 55, 0.3)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 2px 8px rgba(212, 175, 55, 0.2)',
-            transition: 'transform 0.2s'
+            boxShadow: '0 4px 15px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.3s ease'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1) translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+          }}
           >
             <img 
-              src={bigBlOGO} 
-              className="h-12 w-auto" 
+              src={bigblogo} 
+              className="w-auto" 
               alt="BigB Logo"
               style={{ 
                 objectFit: 'contain',
-                maxWidth: '160px'
+                height: '40px',
+                width: 'auto',
+                maxWidth: '280px',
+                transform: 'scale(1.5)',
+                filter: 'drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) brightness(1.2) contrast(1.2) saturate(1.2)'
               }}
             />
           </div>
@@ -39,8 +53,9 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className="nav-link">Home</Link>
+                <button type="button" onClick={() => setServicesOpen(true)} className="nav-link" aria-haspopup="dialog">Services</button>
+                          <Link to="/about-us" className="nav-link">AM Renovators</Link>
           <Link to="/about-us" className="nav-link">About</Link>
-          <button type="button" onClick={() => setServicesOpen(true)} className="nav-link" aria-haspopup="dialog">Services</button>
           <Link to="/contact-us" className="nav-link">Contact</Link>
         </nav>
 

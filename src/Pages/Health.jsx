@@ -6,6 +6,7 @@ import emergecny from "../assets/emergency.jpeg";
 import healthHome from "../assets/homeHealth.jpeg";
 import medicineDelivery from "../assets/medicineDelivery.jpeg";
 import sample from "../assets/sampleCollection.jpeg";
+import health from "../assets/HealthAndMedicalCarousel.jpeg"
 
 export default function Health() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -55,14 +56,17 @@ const services = [
         showAsModal={true}
       />
 
-      {/* Hero Section */}
+    {/* Hero Section */}
       <div className="relative overflow-hidden text-white" style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=2000&q=80')`,
+            backgroundImage: `url(${health})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'grayscale(100%)'
+            opacity: '0.5'
+          }}></div>
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(135deg, rgba(7, 16, 32, 0.85) 0%, rgba(18, 58, 87, 0.85) 100%)'
           }}></div>
         </div>
         
@@ -158,7 +162,7 @@ const services = [
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
-                  <p className="mb-6 leading-relaxed text-base" style={{color: '#5a4a1a'}}>{service.description}</p>
+                  <p className="mb-6 leading-relaxed text-base font-medium" style={{color: '#5a4a1a'}}>{service.description}</p>
                   
                   <div className="mb-6">
                     <h4 className="font-semibold mb-3 flex items-center gap-2" style={{color: '#071020'}}>
@@ -171,7 +175,7 @@ const services = [
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2" style={{color: '#5a4a1a'}}>
                           <div className="w-2 h-2 rounded-full flex-shrink-0" style={{background: '#d4af37'}}></div>
-                          <span className="text-sm">{feature}</span>
+                          <span className="text-sm font-medium">{feature}</span>
                         </div>
                       ))}
                     </div>

@@ -8,6 +8,7 @@ import encumbrance from "../assets/Encumbrance cetrificate.jpeg";
 import propertyMaintaince from "../assets/Property Maintaince.jpeg";
 import propertyInsecption from "../assets/property insepection .jpeg";
 import rental from "../assets/RentalAgreement.jpeg";
+import propertyManagement from "../assets/carouselPropertyManagement.jpeg";
 
 export default function PropertyManagement() {
   const [showEmailForm, setShowEmailForm] = useState(false);
@@ -72,14 +73,18 @@ export default function PropertyManagement() {
       />
   
 
-      {/* Hero Section */}
-      <div className="relative overflow-hidden text-white" style={{background: 'linear-gradient(135deg, #071020 0%, #123a57 100%)'}}>
-        <div className="absolute inset-0 opacity-10">
+      {/* Hero Section - Updated with imported image */}
+      <div className="relative overflow-hidden text-white">
+        {/* Main background with imported image */}
+        <div className="absolute inset-0">
+          <img 
+            src={propertyManagement} 
+            alt="Property Management Background"
+            className="w-full h-max object-cover"
+          />
+          {/* Blue overlay for text contrast */}
           <div className="absolute inset-0" style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=2000&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'grayscale(100%)'
+        background: 'linear-gradient(135deg, rgba(7, 16, 32, 0.8) 0%, rgba(11, 39, 64, 0.9) 100%)'
           }}></div>
         </div>
         
@@ -98,9 +103,9 @@ export default function PropertyManagement() {
         
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-64 h-64 rounded-full -translate-y-32 translate-x-32" 
-             style={{background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)'}}></div>
+             style={{background: 'radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%)'}}></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full translate-y-48 -translate-x-48"
-             style={{background: 'radial-gradient(circle, rgba(11, 39, 64, 0.1) 0%, transparent 70%)'}}></div>
+             style={{background: 'radial-gradient(circle, rgba(11, 39, 64, 0.2) 0%, transparent 70%)'}}></div>
       </div>
 
       {/* Stats Section */}
@@ -188,7 +193,7 @@ export default function PropertyManagement() {
                     <h3 className="text-2xl font-bold pt-2" style={{color: '#071020'}}>{service.title}</h3>
                   </div>
                   
-                  <p className="mb-6 leading-relaxed text-base" style={{color: '#5a4a1a'}}>{service.description}</p>
+                  <p className="mb-6 leading-relaxed text-base font-medium" style={{color: '#5a4a1a'}}>{service.description}</p>
                   
                   <div className="mb-6">
                     <h4 className="font-semibold mb-3 flex items-center gap-2" style={{color: '#071020'}}>
@@ -201,7 +206,7 @@ export default function PropertyManagement() {
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2" style={{color: '#5a4a1a'}}>
                           <div className="w-2 h-2 rounded-full flex-shrink-0" style={{background: '#d4af37'}}></div>
-                          <span className="text-sm">{feature}</span>
+                          <span className="text-sm font-medium">{feature}</span>
                         </div>
                       ))}
                     </div>

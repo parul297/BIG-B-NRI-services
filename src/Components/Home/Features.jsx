@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import civilWorks from "../../assets/carouselCivilWork.jpeg";
+import propertyManagement from "../../assets/carouselPropertyManagement.jpeg";
+import Business from "../../assets/CarouselBusinessConsulting.jpeg"
+import health from "../../assets/HealthAndMedicalCarousel.jpeg"
 
 export default function Features() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,14 +12,16 @@ export default function Features() {
     {
       title: "Civil Works & Construction Services",
       description: "Expert management and maintenance of residential and commercial properties for NRIs.",
-      image: "property",
+      image: "civil", 
+      imageSrc: civilWorks, 
       // tag: "Case Study"
       path:"/civil-works",
     },
     {
       title: "Property Management",
       description: "Professional civil construction and renovation services with trusted contractors.",
-      image: "civil",
+      image: "property", // Changed from "civil" to "property"
+      imageSrc: propertyManagement, // Added image source
       // tag: "Featured",
       path:"/property-management",
     },
@@ -47,11 +53,11 @@ export default function Features() {
       // tag: "Service"
       path:"/taxes-legal",
     },
-  
     {
       title: "Business Consulting/ Registrations",
       description: "Strategic business guidance for NRI entrepreneurs and startup ventures.",
-      image: "business",
+      image: "Business",
+      imageSrc: Business,
       // tag: "Service"
       path:"/business-consulting",
     },
@@ -66,6 +72,7 @@ export default function Features() {
       title: "Health/Medical",
       description: "Access to quality healthcare services and medical consultation facilities.",
       image: "health",
+      imageSrc: health,
       // tag: "Service"
       path:"/health",
     }
@@ -87,9 +94,9 @@ export default function Features() {
         {/* Header */}
         <div className="mb-16 text-center">
           <h2 style={{ color: "#d4af37" }} className="text-4xl font-bold mb-3">
-            Our Services
+            BIG B NRI services 
           </h2>
-          <p style={{ color: "#d4af37" }} className="font-bold">
+          <p style={{ color: "#d4af37" }} className="font-semibold">
             Explore our comprehensive range of NRI services
           </p>
         </div>
@@ -149,8 +156,9 @@ export default function Features() {
   );
 }
 
-function ServiceFeatureCard({ title, description, image, tag, highlight ,path }) {
-   const navigate = useNavigate();
+function ServiceFeatureCard({ title, description, imageSrc,path }) {
+  const navigate = useNavigate();
+  
   const getIcon = (imageName) => {
     switch (imageName) {
       case "property":
@@ -224,28 +232,45 @@ function ServiceFeatureCard({ title, description, image, tag, highlight ,path })
   };
 
   return (
-   <div
-  onClick={() => navigate(path)}
-  className="group cursor-pointer rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-  style={{ background: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
->
+    <div
+      onClick={() => navigate(path)}
+      className="group cursor-pointer rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+      style={{ background: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
+    >
       {/* Image/Pattern Header */}
-      <div className="relative h-52 overflow-hidden" style={{ background: getBackgroundPattern() }}>
+      <div className="relative h-52 overflow-hidden">
+        {/* Use actual image if imageSrc exists, otherwise use gradient pattern */}
+        {imageSrc ? (
+          <img 
+            src={imageSrc} 
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div 
+            className="w-full h-full"
+            style={{ background: getBackgroundPattern() }}
+          >
+            {/* Decorative Elements for gradient cards */}
+            <div className="absolute top-0 right-0 w-32 h-32 rounded-full" style={{ background: "rgba(255,255,255,0.1)", transform: "translate(40%, -40%)" }} />
+            <div className="absolute bottom-0 right-0 w-24 h-24 rounded-full" style={{ background: "rgba(255,255,255,0.1)", transform: "translate(30%, 30%)" }} />
+          </div>
+        )}
+        
+        {/* Overlay for better text readability on images */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60"></div>
+        
         {/* Tag Badge */}
         {/* <div className="absolute top-6 left-6 px-4 py-2 rounded-full text-sm font-bold" style={{ background: "#071020", color: "#ffffff" }}>
           {tag}
         </div> */}
         
         {/* Icon */}
-        <div className="absolute bottom-6 left-6 w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(10px)" }}>
+        {/* <div className="absolute bottom-6 left-6 w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(10px)" }}>
           <div style={{ color: "#ffffff" }}>
             {getIcon(image)}
           </div>
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-32 h-32 rounded-full" style={{ background: "rgba(255,255,255,0.1)", transform: "translate(40%, -40%)" }} />
-        <div className="absolute bottom-0 right-0 w-24 h-24 rounded-full" style={{ background: "rgba(255,255,255,0.1)", transform: "translate(30%, 30%)" }} />
+        </div> */}
       </div>
 
       {/* Content */}
