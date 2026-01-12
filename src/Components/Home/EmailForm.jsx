@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 export default function ContactForm({ 
   isOpen = true, 
   onClose = null,
-  showAsModal = false
+  showAsModal = false,
+  servicesList = null // NEW PROP: accepts custom services list
 }) {
   const [formData, setFormData] = useState({
     from_name: '',
@@ -28,7 +29,8 @@ export default function ContactForm({
     }
   }, [showAsModal, isOpen]);
 
-  const services = [
+  // Default main services (used when servicesList is not provided)
+  const defaultServices = [
     'Property Management',
     'Civil Works and Construction Services',
     'Vital Records Assistance',
@@ -39,6 +41,9 @@ export default function ContactForm({
     'Health/Medical',
     'Online Services'
   ];
+
+  // Use custom servicesList if provided, otherwise use defaultServices
+  const services = servicesList || defaultServices;
 
   const handleChange = (e) => {
     setFormData({

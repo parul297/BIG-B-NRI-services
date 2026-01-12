@@ -11,6 +11,15 @@ import aadhar from "../assets/aadharCard.jpeg";
 export default function OnlineServices() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
+
+  const onlineSubServices = [
+     'Aadhaar Card Services',
+     'PAN Card Services',
+     'Passport Services',
+     'GHMC Property Tax Management',
+     'Utility Bill Payment Management'
+   ];
+
   const services = [
     {
       title: 'Aadhaar Card Services',
@@ -59,6 +68,7 @@ export default function OnlineServices() {
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
+            servicesList={onlineSubServices} 
       />
   
 

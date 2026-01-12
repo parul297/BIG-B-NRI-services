@@ -11,6 +11,15 @@ import visa from "../assets/visaEndorsment.jpeg";
 export default function DocumentAttestation() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
+
+  const documentSubServices = [
+     'GAD Attestation',
+     'HRD Attestation',
+     'MEA Attestation',
+     'Apostille Attestation',
+     'Visa Endorsements'
+   ];
+
   const services = [
     {
       title: 'GAD Attestation',
@@ -58,6 +67,7 @@ export default function DocumentAttestation() {
             isOpen={showEmailForm}
             onClose={() => setShowEmailForm(false)}
             showAsModal={true}
+             servicesList={documentSubServices}
           />
 
       {/* Hero Section */}

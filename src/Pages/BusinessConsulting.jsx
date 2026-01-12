@@ -13,6 +13,16 @@ import business from "../assets/CarouselBusinessConsulting.jpeg";
 export default function BusinessConsulting() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
+
+  const businessSubServices = [
+     'Company & Firm Registrations',
+     'Society & Trust Registrations',
+     'Import/Export Code & Trade License',
+     'Trademark & Labour License',
+     'EPF & ESIC Registrations',
+     'Business Agreements & Legal Documents'
+   ];
+
 const services = [
   {
     title: 'Company & Firm Registrations',
@@ -68,6 +78,7 @@ const services = [
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
+        servicesList={businessSubServices}
       />
 
      {/* Hero Section */}

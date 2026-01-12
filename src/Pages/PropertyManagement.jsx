@@ -14,6 +14,16 @@ export default function PropertyManagement() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
 
+const propertyManagementSubServices = [
+     'Buying / Selling Assistance',
+     'Encumbrance Certificate',
+     'Tenant Management & Vacating Inspections',
+     'Final Handover Inspection (New Construction)',
+     'Property Maintenance',
+     'Rental Agreement Services'
+   ];
+
+
   const services = [
     {
       title: 'Buying / Selling Assistance',
@@ -70,6 +80,7 @@ export default function PropertyManagement() {
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
+            servicesList={propertyManagementSubServices}
       />
   
 

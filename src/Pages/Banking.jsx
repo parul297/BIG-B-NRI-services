@@ -9,6 +9,13 @@ import otherBanking from "../assets/otherBanking.jpeg";
 export default function Banking() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
+
+  const bankingSubServices = [
+     'NRI Accounts (NRE/NRO Account)',
+     'Bank Lockers',
+     'Other Banking Requirements'
+   ];
+
 const services = [
   {
     title: 'NRI Accounts (NRE/NRO Account)',
@@ -46,6 +53,7 @@ const services = [
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
+          servicesList={bankingSubServices}
       />
 
 

@@ -10,6 +10,13 @@ import legalisation from "../assets/legalisation.jpeg";
 export default function TaxesLegal() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
+  const taxesLegalSubServices = [
+     'IT Notices & Tax Authority Assistance',
+     'Legal Consultation & Lawyer Arrangement',
+     'Income Tax Return (ITR) Filing',
+     'Document Legalization & Attestation'
+   ];
+
   const services = [
     {
       title: 'IT Notices & Tax Authority Assistance',
@@ -71,6 +78,7 @@ export default function TaxesLegal() {
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
+        servicesList={taxesLegalSubServices}
       />
 
       {/* Hero Section */}

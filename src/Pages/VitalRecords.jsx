@@ -12,6 +12,16 @@ import birth from "../assets/birthCertificate.jpeg";
 export default function VitalRecords() {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
+
+  const vitalSubServices = [
+     'Birth Certificate',
+     'Non-Availability of Birth Certificate',
+     'Marriage Certificate',
+     'Death Certificate',
+     'Income Certificate',
+     'Caste Certificate'
+   ];
+
   const services = [
     {
       title: 'Birth Certificate',
@@ -65,6 +75,7 @@ export default function VitalRecords() {
         isOpen={showEmailForm}
         onClose={() => setShowEmailForm(false)}
         showAsModal={true}
+             servicesList={vitalSubServices} 
       />
 
       {/* Hero Section */}
