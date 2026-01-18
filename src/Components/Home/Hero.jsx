@@ -4,8 +4,11 @@ import Document from "../../assets/DocumentAttestation.jpeg";
 import vital from "../../assets/vitalRecordsCarousel.jpeg";
 import online from "../../assets/CarouselonlineServices.jpeg"
 import taxes from "../../assets/carouselTaxesAndLegal.jpeg";
-import business from "../../assets/CarouselBusinessConsulting.jpeg"
-
+import propertyManagement from "../../assets/propertyManagement.webp";
+import businessConsulting from "../../assets/businessConsulting.webp";
+import civilWorks from "../../assets/civilWorksAndMaintaince.jpg";
+import healthANDmedical from "../../assets/healthAndMedical.jpg";
+import bankingAssistance from "../../assets/bankingAssistance.png"
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,19 +18,19 @@ export default function Hero() {
       title: "Banking Assistance for NRIs",
       description:
         "Hassle-free banking solutions including account management, remittances, and compliance support.",
-      // image: bankingAssistance,
+      image: bankingAssistance,
     },
     {
       title: "Civil Works & Maintenance",
       description:
         "Trusted civil works, repairs, and maintenance services for your property in India.",
-      // image: civilWorks,
+      image: civilWorks,
     },
     {
       title: "Business Consulting",
       description:
         "Professional business consulting and advisory services for NRIs.",
-      // image: business,
+      image: businessConsulting,
     },
     {
       title: "Documents & Certificates",
@@ -39,7 +42,7 @@ export default function Hero() {
       title: "Health & Medical Support",
       description:
         "Medical coordination, hospital assistance, and healthcare support for your family.",
-      // image: health,
+      image: healthANDmedical,
     },
     {
       title: "Online Services",
@@ -51,7 +54,7 @@ export default function Hero() {
       title: "Property Management",
       description:
         "End-to-end property management including rent, maintenance, and inspections.",
-      // image: property,
+      image: propertyManagement,
     },
     // {
     //   title: "Rental Agreement Services",

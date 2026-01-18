@@ -4,6 +4,11 @@ import civilWorks from "../../assets/carouselCivilWork.jpeg";
 import propertyManagement from "../../assets/carouselPropertyManagement.jpeg";
 import Business from "../../assets/CarouselBusinessConsulting.jpeg"
 import health from "../../assets/HealthAndMedicalCarousel.jpeg"
+import Banking from "../../assets/bankingcarousel.jpeg";
+import Document from "../../assets/documentattestationcarousel.jpg";
+import Tax from "../../assets/taxCarousel.webp";
+import Vital from "../../assets/vitalrecordCaraousel.webp";
+import Online from "../../assets/onlineServiesCarousel.avif";
 
 export default function Features() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,28 +33,28 @@ export default function Features() {
     {
       title: "Vital Records Procurement",
       description: "Hassle-free assistance with birth certificate registration and documentation.",
-      image: "birth",
+      imageSrc: Vital,
       // tag: "Service"
       path:"/vital-records",
     },
     {
       title: "Complete Document Attestation",
       description: "Professional document attestation services for all your legal requirements.",
-      image: "document",
+      imageSrc: Document,
       // tag: "Service"
       path:"/complete-document",
     },
     {
       title: "Online Services",
       description: "Digital solutions for visa, passport, and government document processing.",
-      image: "online",
+      imageSrc: Online,
       // tag: "Product Guide"
       path:"/online-services",
     },
     {
       title: "Taxes and Legal",
       description: "Expert financial planning and legal advisory services tailored for NRIs.",
-      image: "financial",
+      imageSrc: Tax,
       // tag: "Service"
       path:"/taxes-legal",
     },
@@ -64,7 +69,7 @@ export default function Features() {
     {
       title: "Banking Assistance",
       description: "Complete banking solutions including remittance and investment services.",
-      image: "banking",
+      imageSrc: Banking,
       // tag: "Service"
       path:"/banking",
     },
