@@ -9,8 +9,9 @@ import businessConsulting from "../../assets/businessConsulting.webp";
 import civilWorks from "../../assets/civilWorksAndMaintaince.jpg";
 import healthANDmedical from "../../assets/healthAndMedical.jpg";
 import bankingAssistance from "../../assets/bankingAssistance.png"
+import contactUs from "../../Pages/ContactUs";
 
-export default function Hero() {
+export default function Hero({ onOpenServices }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -125,39 +126,53 @@ export default function Hero() {
 
             {/* Content Overlay */}
             <div className="relative max-w-full mx-auto px-8 md:px-12 lg:px-16 h-full flex items-center">
-              <div className="w-full max-w-3xl">
+              <div className="w-full max-w-4xl">
                 
                 {/* Text Section */}
-                <div className="z-10">
+                <div className="z-10 space-y-6">
                   <h1
-                    className="text-3xl md:text-5xl font-extrabold mb-4"
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
                     style={{
-                      color: "#d4af37",
-                      letterSpacing: "2px",
-                      textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
+                      color: "#ffd86b",
+                      letterSpacing: "-1px",
+                      textShadow: "3px 3px 8px rgba(0,0,0,0.9)",
+                      background: "linear-gradient(135deg, #ffd86b 0%, #d4af37 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent"
                     }}
                   >
                     {slide.title}
                   </h1>
-                  <p className="mb-6 text-lg md:text-xl" style={{ 
+                  <p className="text-lg md:text-xl lg:text-2xl font-light leading-relaxed max-w-2xl" style={{ 
                     color: "#ffffff",
-                    textShadow: "1px 1px 3px rgba(0,0,0,0.8)",
+                    textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
                   }}>
                     {slide.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-4">
-                    <a
-                      href=''
-                      className="px-6 py-3 rounded-md shadow-lg transition-transform hover:scale-105"
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <button
+                      onClick={onOpenServices}
+                      className="px-8 py-4 rounded-lg shadow-lg transition-all hover:shadow-2xl hover:scale-105 font-bold text-lg"
                       style={{
                         background:
-                          "linear-gradient(90deg,#d4af37,#ffd86b)",
+                          "linear-gradient(135deg, #d4af37, #ffd86b)",
                         color: "#071020",
-                        fontWeight: 700,
                       }}
                     >
-                      Get Started
+                      Explore Services
+                    </button>
+                    <a
+                      href='contact-us'
+                      className="px-8 py-4 rounded-lg font-bold text-lg transition-all hover:scale-105"
+                      style={{
+                        background: "rgba(212, 175, 55, 0.2)",
+                        border: "2px solid #d4af37",
+                        color: "#ffd86b",
+                      }}
+                    >
+                      Contact Us
                     </a>
                   </div>
                 </div>
@@ -170,41 +185,46 @@ export default function Hero() {
         {/* Left Arrow */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full z-20"
+          className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full z-20 transition-all hover:scale-110 backdrop-blur-sm"
           style={{
-            background: "rgba(212,175,55,0.3)",
-            border: "1px solid rgba(212,175,55,0.6)",
+            background: "rgba(212,175,55,0.4)",
+            border: "2px solid rgba(212,175,55,0.8)",
+            boxShadow: "0 8px 16px rgba(212, 175, 55, 0.2)"
           }}
         >
-          <ChevronLeft size={28} style={{ color: "#d4af37" }} />
+          <ChevronLeft size={32} style={{ color: "#ffd86b" }} />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full z-20"
+          className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full z-20 transition-all hover:scale-110 backdrop-blur-sm"
           style={{
-            background: "rgba(212,175,55,0.3)",
-            border: "1px solid rgba(212,175,55,0.6)",
+            background: "rgba(212,175,55,0.4)",
+            border: "2px solid rgba(212,175,55,0.8)",
+            boxShadow: "0 8px 16px rgba(212, 175, 55, 0.2)"
           }}
         >
-          <ChevronRight size={28} style={{ color: "#d4af37" }} />
+          <ChevronRight size={32} style={{ color: "#ffd86b" }} />
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
+              className="transition-all hover:scale-110"
               style={{
-                width: currentSlide === index ? "40px" : "12px",
-                height: "12px",
+                width: currentSlide === index ? "32px" : "10px",
+                height: "10px",
                 borderRadius: "6px",
                 background:
                   currentSlide === index
-                    ? "#d4af37"
-                    : "rgba(212,175,55,0.3)",
+                    ? "#ffd86b"
+                    : "rgba(212,175,55,0.4)",
+                border: currentSlide === index ? "2px solid #ffd86b" : "none",
+                boxShadow: currentSlide === index ? "0 0 15px rgba(212, 175, 55, 0.5)" : "none"
               }}
             />
           ))}

@@ -5,14 +5,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import bigblogo from "../../assets/BIGBLOGO-removebg-preview.png"
 import React from 'react'
 
-export default function Header() {
+export default function Header({ servicesOpen, setServicesOpen }) {
   const [open, setOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
   const navigate = useNavigate()
 
   return (
-    <header style={{ background: 'linear-gradient(90deg,#071020 0%,#0b2740 100%)', color: '#d4af37', borderBottom: '3px solid #d4af37' }} className="shadow">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header style={{ background: 'linear-gradient(90deg,#071020 0%,#0b2740 100%)', color: '#d4af37', borderBottom: '2px solid #d4af37' }} className="shadow-lg sticky top-0 z-40">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
     <Link to="/" className="flex items-center gap-4">
           <div style={{
             padding: '6px 12px',

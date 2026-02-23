@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Enhanced Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
 /* Header / Compass styles for BIG B */
 .compass-outer {
 	position: relative;
@@ -202,19 +214,6 @@ header a { color: inherit; }
 .modal-content h3 { z-index: 2; position: relative; }
 .modal-content p { z-index: 2; position: relative; }
 
-@media (max-width: 640px) {
-	.compass-outer { width: 40px; height: 40px; border-width: 2px; }
-	.brand-title { font-size: 1rem; }
-	.services-grid {
-		grid-template-columns: 1fr;
-		gap: 15px;
-	}
-	.service-card {
-		min-height: 100px;
-		padding: 1.25rem;
-	}
-}
-
 /* Make modal close button visible on golden background */
 .modal-content > button[aria-label] { 
 	background: rgba(255,255,255,0.9); 
@@ -243,6 +242,7 @@ header a { color: inherit; }
 	z-index: 2;
 	position: relative;
 }
+
 /* Features Section Styles */
 .feature-card {
   position: relative;
@@ -268,13 +268,29 @@ header a { color: inherit; }
   height: 4px;
   background: linear-gradient(90deg, #d4af37, #f4d03f, #d4af37);
   background-size: 200% 100%;
-  animation: gold-shimmer 3s ease-in-out infinite;
+  animation: gold-shimmer-alt 3s ease-in-out infinite;
   z-index: 10;
 }
 
-@keyframes gold-shimmer {
+@keyframes gold-shimmer-alt {
   0%, 100% { background-position: -200% 0; }
   50% { background-position: 200% 0; }
+}
+
+/* Page Sections Background Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
 }
 
 /* Responsive adjustments */
@@ -286,4 +302,19 @@ header a { color: inherit; }
   .feature-card:hover {
     transform: translateY(-4px);
   }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-card {
+    min-height: 100px;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+	.compass-outer { width: 40px; height: 40px; border-width: 2px; }
+	.brand-title { font-size: 1rem; }
 }

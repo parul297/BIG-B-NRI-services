@@ -173,7 +173,7 @@ function StatCard({ title, subtitle, description, icon }) {
               </p>
 
               {/* Animated Indicator */}
-              <div className="flex items-center gap-3 group-hover:gap-4 transition-all duration-300">
+              {/* <div className="flex items-center gap-3 group-hover:gap-4 transition-all duration-300">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full animate-pulse"></div>
                   <span className="text-amber-600 text-xs font-semibold tracking-wide">EXPLORE MORE</span>
@@ -181,7 +181,7 @@ function StatCard({ title, subtitle, description, icon }) {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-amber-600 transform group-hover:translate-x-1 transition-transform duration-300">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

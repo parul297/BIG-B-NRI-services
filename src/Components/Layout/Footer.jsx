@@ -58,8 +58,7 @@ export default function Footer() {
                     <FooterLink href="/" text="Home" />
                     <FooterLink href="/about-us" text="About Us" />
                     <FooterLink href="/contact-us" text="Contact Us" />
-                    <FooterLink href="/services" text="Services" />
-                    <FooterLink href="/resources" text="Resources" />
+                    {/* <FooterLink href="/services" text="Services" /> */}
                   </ul>
                 </div>
 
@@ -98,12 +97,12 @@ export default function Footer() {
             <div className="text-sm text-center md:text-left" style={{ color: '#5c4a3a' }}>
               © {new Date().getFullYear()} BIG B NRI Services. All rights reserved.
             </div>
-            <div className="flex flex-wrap gap-6 text-sm font-medium">
+            {/* <div className="flex flex-wrap gap-6 text-sm font-medium">
               <FooterPolicyLink href="/privacy" text="Privacy Policy" />
               <FooterPolicyLink href="/terms" text="Terms of Service" />
               <FooterPolicyLink href="/cookies" text="Cookie Policy" />
               <FooterPolicyLink href="/disclaimer" text="Disclaimer" />
-            </div>
+            </div> */}
           </div>
         </div>
 
